@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 	<head>
@@ -19,7 +19,7 @@
 						<img src="images/welcomeLeftSpacer.png">
 					</td>
 					<td width="100%">
-					<a href="" onMouseOver="document.quickSchedule.src='images/quickScheduleB.png';" onMouseOut="document.quickSchedule.src='images/quickSchedule.png';">
+					<a href="calendar.php" onMouseOver="document.quickSchedule.src='images/quickScheduleB.png';" onMouseOut="document.quickSchedule.src='images/quickSchedule.png';">
  <img src="images/quickSchedule.png" name="quickSchedule" width="219" height="212" border="0"></a><a href="" onMouseOver="document.customSchedule.src='images/customScheduleB.png';" onMouseOut="document.customSchedule.src='images/customSchedule.png';">
  <img src="images/customSchedule.png" name="customSchedule" border="0"></a>
 					</td>
@@ -31,12 +31,12 @@
 					<td>
 						<table border="0" cellpadding="0" cellspacing="0">
 							<tr>
-								<td><a href="" onMouseOver="document.classStatus.src='images/classStatusB.png';" onMouseOut="document.classStatus.src='images/classStatus.png';">
-<img src="images/classStatus.png" name="classStatus" border="0"></a></td>						
+								<td><a href="check_single_status.php" id="class_status" onMouseOver="document.classStatus.src='images/classStatusB.png';" onMouseOut="document.classStatus.src='images/classStatus.png';">
+<img src="images/classStatus.png" name="classStatus" border="0" ></a></td>						
 							</tr>
 							<tr>
 								<td><a href="" onMouseOver="document.currentSchedule.src='images/currentScheduleB.png';" onMouseOut="document.currentSchedule.src='images/currentSchedule.png';">
-<img src="images/classStatus.png" name="currentSchedule" border="0"></a></td>
+<img src="images/currentSchedule.png" name="currentSchedule" border="0"></a></td>
 							</tr>
 							<tr>
 								<td><a href="" onMouseOver="document.classHistory.src='images/classHistoryB.png';" onMouseOut="document.classHistory.src='images/classHistory.png';">
@@ -50,6 +50,17 @@
 			</table>
 
 		</div>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var classSched = $("#class_status");
+				classSched.click(function(event) {
+					event.preventDefault();
+					$.get("/SchedulePro/check_single_status.php");
+				});
+			});
+		
+		</script>
 		
 	</body>
 </html>

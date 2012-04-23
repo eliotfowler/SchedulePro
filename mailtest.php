@@ -2,7 +2,7 @@
  
 include_once "lib/swift_required.php";
  
-function send($crn) {
+function send() {
 /*
  * Create the body of the message (a plain-text and an HTML version).
  * $text is your plain-text email
@@ -10,7 +10,7 @@ function send($crn) {
  * If the reciever is able to view html emails then only the html
  * email will be displayed
  */ 
-$text = "Your class with CRN " . $crn ." is almost full!\n";
+$text = "Your class is almost full!\n";
 $html = <<<EOM
 <html>
   <head></head>
