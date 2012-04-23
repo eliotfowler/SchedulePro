@@ -1,0 +1,16 @@
+body {
+	
+	background-image: url("../images/bodyBackground.gif");
+	padding: 0px;
+	margin 0px;
+}
+
+
+
+#middle {
+	background-image: url("../images/welcomeBack.png");
+	background-size: auto;
+	margin: auto auto auto auto;
+	width: 1037px;
+	height: 878px;	
+}

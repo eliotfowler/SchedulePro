@@ -1,0 +1,31 @@
+body {
+	
+	background-image: url("../images/bodyBackground.gif");
+	padding: 0px;
+	margin 0px;
+}
+
+
+
+#middle {
+	background-image: url("../images/home2.png");
+	background-size: auto;
+	margin: auto auto auto auto;
+	width: 1038px;
+	height: 878px;	
+}
+
+#welcomeB {
+	
+	background-image: url("../images/bodyBackground.gif");
+	padding: 0px;
+	margin 0px;
+}
+
+#welcomeM {
+	background-image: url("../images/welcomeBack.png");
+	background-size: auto;
+	margin: auto auto auto auto;
+	width: 996px;
+	height: 878px;	
+}
