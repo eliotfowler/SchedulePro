@@ -48,7 +48,7 @@
 		<table border="1">
 		<?php
 			$elementCounter = 0;
-			for($i = 0; $i<$reqFields; $i++;)
+			for($i = 0; $i<$reqFields; $i++)
 			{
 				if($i == 0)
 				{
