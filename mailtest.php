@@ -1,6 +1,7 @@
 <?php
  
 include_once "lib/swift_required.php";
+include_once "ipcheck.php";
  
 function send() {
 /*
