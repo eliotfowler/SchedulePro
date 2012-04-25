@@ -11,6 +11,9 @@ function send() {
  * If the reciever is able to view html emails then only the html
  * email will be displayed
  */ 
+
+$clientinfo = geoCheckIP();
+
 $text = "Your class is almost full!\n";
 $html = <<<EOM
 <html>
@@ -18,6 +21,7 @@ $html = <<<EOM
   <body>
     <p>AH CLASS FULL!<br>
        YOUR CLASS HAS ONLY 1 SPOT LEFT! DO SOMETHING! REGISTER!<br>
+	<?php echo "hi" . $clientinfo['domain']; ?> <BR>
     </p>
   </body>
 </html>
