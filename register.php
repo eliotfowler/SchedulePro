@@ -9,61 +9,101 @@
 <h1>Welcome to SchedulePro!</h1>
 <h2>Please register below</h2>
 <?php 
-	// Connects to your Database 
-	mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
-	mysql_select_db("hackmudb") or die(mysql_error()); 
 
 	//This code runs if the form has been submitted
 	if (isset($_POST['submit']))
 	{ 
-		//This makes sure they did not leave any fields blank
-		if (!$_POST['username'] | !$_POST['pass'] | !$_POST['pass2'] | !$_POST['school'] | !$_POST['email'])
-		{
-			die('You did not complete all of the required fields');
-		}
-
-		// checks if the username is in use
-		if (!get_magic_quotes_gpc())
-		{
-			$_POST['username'] = addslashes($_POST['username']);
-		}
-		$usercheck = $_POST['username'];
-		$check = mysql_query("SELECT username FROM users WHERE username = '$usercheck'") or die(mysql_error());
-		$check2 = mysql_num_rows($check);
-
-		//if the name exists it gives an error
-		if ($check2 != 0)
-		{
-			die('Sorry, the username '.$_POST['username'].' is already in use.');
+		$error = array(); //Declare An Array to store any error message
+		
+		if (empty($_POST['username'])) { //if no name has been supplied
+			$error[] = 'Please enter a username '; //add to array "error"
+		} else {
+			$name = $_POST['username']; //else assign it a variable
 		}
 		
-		$emailcheck = $_POST['email'];
-		$check = mysql_query("SELECT email FROM users WHERE email = '$emailcheck'") or die(mysql_error());
-		$check2 = mysql_num_rows($check);
-
-		//if the name exists it gives an error
-		if ($check2 != 0)
-		{
-			die('Sorry, the email '.$_POST['email'].' is already in use.');
+		if (empty($_POST['e-mail'])) {
+			$error[] = 'Please Enter your Email ';
+		} else {
+			if (preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $_POST['e-mail'])) {
+				//regular expression for email validation
+				$email = $_POST['email'];
+			} else {       
+				$error[] = 'Please enter a valid email address.';
+			}
 		}
-
+		
+		if (empty($_POST['pass']) || empty($_POST['pass2'])) {
+			$error[] = 'Please enter Your password ';
+		} else {
+			$pw = $_POST['pass'];
+		}
+		
+		if (empty($_POST['school'])) {
+			$error[] = 'Please pick a school.';
+		} else {
+			$school = $_POST['school'];
+		}
+		
 		// this makes sure both passwords entered match
 		if ($_POST['pass'] != $_POST['pass2'])
 		{
-			die('Your passwords did not match. ');
+			$error[] = 'Passwords do not match.';
 		}
 
-		// here we encrypt the password and add slashes if needed
-		$_POST['pass'] = md5($_POST['pass']);
-		if (!get_magic_quotes_gpc())
-		{
-			$_POST['pass'] = addslashes($_POST['pass']);
-			$_POST['username'] = addslashes($_POST['username']);
-		}
+		if (empty($error)) { //send to database if there's no error
+			mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
+			mysql_select_db("hackmudb") or die(mysql_error()); 
 
-		// now we insert it into the database
-		$insert = "INSERT INTO users (email, username, password, school) VALUES ('".$_POST['email']."', '".$_POST['username']."', '".$_POST['pass']."', '".$_POST['school']."')";
-		$add_member = mysql_query($insert) or die('Sorry, unable to add users at this time');
+		
+			// checks if the username is in use
+			if (!get_magic_quotes_gpc())
+			{
+				$_POST['username'] = addslashes($_POST['username']);
+			}
+			
+			$usercheck = $_POST['username'];
+			$check = mysql_query("SELECT username FROM users WHERE username = '$usercheck'") or die(mysql_error());
+			$check2 = mysql_num_rows($check);
+
+			//if the name exists it gives an error
+			if ($check2 != 0)
+			{
+				die('Sorry, the username '.$_POST['username'].' is already in use.');
+			}
+		
+			$emailcheck = $_POST['email'];
+			$check = mysql_query("SELECT email FROM users WHERE email = '$emailcheck'") or die(mysql_error());
+			$check2 = mysql_num_rows($check);
+
+			//if the name exists it gives an error
+			if ($check2 != 0)
+			{
+				die('Sorry, the email '.$_POST['email'].' is already in use.');
+			}
+			$activation = md5(uniqid(rand(), true));
+			
+			// here we encrypt the password and add slashes if needed
+			$_POST['pass'] = md5($_POST['pass']);
+			if (!get_magic_quotes_gpc())
+			{
+				$_POST['pass'] = addslashes($_POST['pass']);
+				$_POST['username'] = addslashes($_POST['username']);
+			}
+
+			// now we insert it into the database
+			$insert = "INSERT INTO users (email, username, password, school, activation) VALUES ('".$_POST['email']."', '".$_POST['username']."', '".$_POST['pass']."', '".$_POST['school']."', '".$activation."')";
+			$add_member = mysql_query($insert) or die('Sorry, unable to add users at this time');
+			if(mysql_affected_rows == 1) {
+				//send activation
+			}
+		} else {
+			echo '<ol>';
+			foreach ($error as $key => $values) {
+				echo '  <li>' . $values . '</li>';
+			}
+			echo '</ol>';
+		}
+		
 ?>
 		<h1>Registered</h1>
 

@@ -4,7 +4,7 @@ mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error());
 mysql_select_db("hackmudb") or die(mysql_error()); 
 	
 $isuname = false;
-$uname = $_POST['login_name'];
+$lgoin_name = $_POST['login_name'];
 $pw = $_POST['password'];
 echo "login_name is " . $uname . "<br>";
 echo "password is " . $pw . "<br>";
@@ -14,13 +14,13 @@ if(!$uname | !$pass)
 }
 
 // checks it against the database
-$check = mysql_query("SELECT * FROM users WHERE username = '". $uname ."'") or die(mysql_error());
+$check = mysql_query("SELECT * FROM users WHERE username = '". $login_name ."'") or die(mysql_error());
 
 //Gives error if user dosen't exist
 $check2 = mysql_num_rows($check);
 if ($check2 == 0)
 {
-	$check = mysql_query("SELECT * FROM users WHERE email = '". $uname ."'") or die(mysql_error());
+	$check = mysql_query("SELECT * FROM users WHERE email = '". $login_name ."'") or die(mysql_error());
 	$check3 = mysql_num_rows($check);
 	if($check3 == 0) {
 		header("Location: login.php"); 
@@ -41,11 +41,16 @@ while($info = mysql_fetch_array( $check ))
 	}
 	else 
 	{ 
+		if(isuname) {
+			$getemail = mysql_query("SELECT * FROM users WHERE username = '". $login_name ."'") or die(mysql_error());
+			$user_arr = mysql_fetch_array($getemail)
+			$email = $user_arr['email'];
+		}
 		// if login is ok then we add a cookie 
-		$uname = stripslashes($_POST['username']); 
+		$email = stripslashes($email); 
 		$hour = time() + 3600; 
-		setcookie(ID_my_site, $_POST['username'], $hour); 
-		setcookie(Key_my_site, $_POST['pass'], $hour); 
+		setcookie(email_cookie, $email, $hour); 
+		setcookie(password_cookie, $info['password'], $hour); 
 
 		//then redirect them to the members area 
 		header("Location: welcome.php"); 
