@@ -42,7 +42,7 @@
 					<input type="text" name="login_name" maxlength="40"> 
 				</td></tr> 
 				<tr><td>Password:</td><td> 
-					<input type="password" name="login_name" maxlength="50"> 
+					<input type="password" name="password" maxlength="50"> 
 				</td></tr> 
 				<tr><td colspan="2" align="right"> 
 					<input type="submit" name="submit" value="Login"> 
