@@ -1,8 +1,13 @@
 <?php
+
+mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
+mysql_select_db("hackmudb") or die(mysql_error()); 
+	
+	
 $uname = $_POST['username'];
 $pw = $_POST['password'];
-echo $uname . "<br>";
-echo $pw . "<br>";
+echo "username is " . $uname . "<br>";
+echo "password is " . $pw . "<br>";
 if(!$uname | !$pass)
 		{
 			echo "WTF?";
