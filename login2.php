@@ -4,7 +4,7 @@ mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error());
 mysql_select_db("hackmudb") or die(mysql_error()); 
 	
 $isuname = false;
-$lgoin_name = $_POST['login_name'];
+$login_name = $_POST['login_name'];
 $pw = $_POST['password'];
 echo "login_name is " . $uname . "<br>";
 echo "password is " . $pw . "<br>";
@@ -41,9 +41,9 @@ while($info = mysql_fetch_array( $check ))
 	}
 	else 
 	{ 
-		if(isuname) {
+		if($isuname) {
 			$getemail = mysql_query("SELECT * FROM users WHERE username = '". $login_name ."'") or die(mysql_error());
-			$user_arr = mysql_fetch_array($getemail)
+			$user_arr = mysql_fetch_array($getemail);
 			$email = $user_arr['email'];
 		}
 		// if login is ok then we add a cookie 
