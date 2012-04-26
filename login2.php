@@ -5,7 +5,8 @@ echo $uname . "<br>";
 echo $pw . "<br>";
 if(!$uname | !$pass)
 		{
-			header("Location: login.php"); 
+			echo "WTF?";
+			//header("Location: login.php"); 
 		}
 		// checks it against the database
 
