@@ -31,13 +31,15 @@ if(!$uname | !$pass)
 		}
 		while($info = mysql_fetch_array( $check )) 
 		{
-			$pw = stripslashes($_POST['pass']);
+			$pw = stripslashes($pw);
 			$info['password'] = stripslashes($info['password']);
 			$md5pw = md5($pw);
 
 			//gives error if the password is wrong
 			if ($md5pw != $info['password'])
 			{
+				echo "md5 pw is " . $md5pw . "<br>";
+				echo "shouldve been " . $info['password'] . "<br>";
 				die('Incorrect password, please try again.');
 			}
 			else 
