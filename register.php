@@ -17,7 +17,7 @@
 	if (isset($_POST['submit']))
 	{ 
 		//This makes sure they did not leave any fields blank
-		if (!$_POST['username'] | !$_POST['pass'] | !$_POST['pass2'] | !$_POST['school'])
+		if (!$_POST['username'] | !$_POST['pass'] | !$_POST['pass2'] | !$_POST['school'] | !$_POST['email'])
 		{
 			die('You did not complete all of the required fields');
 		}
@@ -36,6 +36,16 @@
 		{
 			die('Sorry, the username '.$_POST['username'].' is already in use.');
 		}
+		
+		$emailcheck = $_POST['email'];
+		$check = mysql_query("SELECT email FROM users WHERE email = '$emailcheck'") or die(mysql_error());
+		$check2 = mysql_num_rows($check);
+
+		//if the name exists it gives an error
+		if ($check2 != 0)
+		{
+			die('Sorry, the email '.$_POST['email'].' is already in use.');
+		}
 
 		// this makes sure both passwords entered match
 		if ($_POST['pass'] != $_POST['pass2'])
@@ -52,7 +62,7 @@
 		}
 
 		// now we insert it into the database
-		$insert = "INSERT INTO users (username, password, school) VALUES ('".$_POST['username']."', '".$_POST['pass']."', '".$_POST['school']."')";
+		$insert = "INSERT INTO users (email, username, password, school) VALUES ('".$_POST['email']."', '".$_POST['username']."', '".$_POST['pass']."', '".$_POST['school']."')";
 		$add_member = mysql_query($insert) or die('Sorry, unable to add users at this time');
 ?>
 		<h1>Registered</h1>
