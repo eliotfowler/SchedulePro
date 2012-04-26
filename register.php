@@ -15,10 +15,16 @@
 	{ 
 		$error = array(); //Declare An Array to store any error message
 		
-		if (empty($_POST['username'])) { //if no name has been supplied
-			$error[] = 'Please enter a username '; //add to array "error"
+		if (empty($_POST['fname'])) { //if no name has been supplied
+			$error[] = 'Please enter a first name '; //add to array "error"
 		} else {
-			$name = $_POST['username']; //else assign it a variable
+			$fname = $_POST['fname']; //else assign it a variable
+		}
+		
+		if (empty($_POST['lname'])) { //if no name has been supplied
+			$error[] = 'Please enter a last name '; //add to array "error"
+		} else {
+			$fname = $_POST['lname']; //else assign it a variable
 		}
 		
 		if (empty($_POST['e-mail'])) {
@@ -55,47 +61,33 @@
 			mysql_select_db("hackmudb") or die(mysql_error()); 
 
 		
-			// checks if the username is in use
-			if (!get_magic_quotes_gpc())
-			{
-				$_POST['username'] = addslashes($_POST['username']);
-			}
-			
-			$usercheck = $_POST['username'];
-			$check = mysql_query("SELECT username FROM users WHERE username = '$usercheck'") or die(mysql_error());
-			$check2 = mysql_num_rows($check);
-
-			//if the name exists it gives an error
-			if ($check2 != 0)
-			{
-				die('Sorry, the username '.$_POST['username'].' is already in use.');
-			}
-		
-			$emailcheck = $_POST['email'];
+			$emailcheck = $email;
 			$check = mysql_query("SELECT email FROM users WHERE email = '$emailcheck'") or die(mysql_error());
 			$check2 = mysql_num_rows($check);
 
 			//if the name exists it gives an error
 			if ($check2 != 0)
 			{
-				die('Sorry, the email '.$_POST['email'].' is already in use.');
+				die('Sorry, the email '.$email.' is already in use.');
 			}
+			
 			$activation = md5(uniqid(rand(), true));
 			
 			// here we encrypt the password and add slashes if needed
-			$_POST['pass'] = md5($_POST['pass']);
+			$pw = md5($_POST['pass']);
 			if (!get_magic_quotes_gpc())
 			{
-				$_POST['pass'] = addslashes($_POST['pass']);
-				$_POST['username'] = addslashes($_POST['username']);
+				$pw = addslashes($pw);
 			}
 
 			// now we insert it into the database
-			$insert = "INSERT INTO users (email, username, password, school, activation) VALUES ('".$_POST['email']."', '".$_POST['username']."', '".$_POST['pass']."', '".$_POST['school']."', '".$activation."')";
+			$insert = "INSERT INTO users (fname, lname, email, password, school, activation) VALUES ('".$fname."', '".$lname."', '".$email."', '".$pw."', '".$school."', '".$activation."')";
 			$add_member = mysql_query($insert) or die('Sorry, unable to add users at this time');
+			
 			if(mysql_affected_rows == 1) {
 				//send activation
 			}
+			
 		} else {
 			echo '<ol>';
 			foreach ($error as $key => $values) {
@@ -110,7 +102,7 @@
 <?php
 
 		echo "<p>Thank you, you are now registered as \"<b>";
-		echo $_POST['username'];
+		echo $email;
 		echo "</b>\"- you may now login</a>.</p>";
 	} 
 	else 
@@ -119,8 +111,11 @@
 
 	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <table border="0">
-            <tr><td>Username:</td><td>
-                <input type="text" name="username" maxlength="60">
+            <tr><td>First Name:</td><td>
+                <input type="text" name="fname" maxlength="45">
+            </td></tr>
+            <tr><td>Last Name:</td><td>
+                <input type="text" name="lname" maxlength="45">
             </td></tr>
 			<tr><td>Email:</td><td>
                 <input type="text" name="email" maxlength="128">
