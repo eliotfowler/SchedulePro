@@ -82,6 +82,9 @@
             <tr><td>Username:</td><td>
                 <input type="text" name="username" maxlength="60">
             </td></tr>
+			<tr><td>Email:</td><td>
+                <input type="text" name="email" maxlength="128">
+            </td></tr>
             <tr><td>Password:</td><td>
                 <input type="password" name="pass" maxlength="10">
             </td></tr>
