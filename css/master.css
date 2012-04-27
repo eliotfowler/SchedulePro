@@ -185,7 +185,7 @@ input:focus {
 	z-index: 100;
 }
 /*settings menu*/
-#settings { width:192px; position:absolute; top:50%; left:50%; margin:0 0 0 0; }
+#settings { width:192px; top:50%; left:50%; margin:0 0 0 0; }
 
 /*---------------------------
 Button Default
