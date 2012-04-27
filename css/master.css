@@ -264,8 +264,7 @@ Button Menu
 .menu {
     position:absolute;
     top:32px;
-    left:0;
-    right:0;
+    right:10px;
     background:#fff;
     border-radius:0 0 3px 3px;
     -moz-border-radius:0 0 3px 3px;
@@ -276,7 +275,6 @@ Button Menu
     display:none;
     z-index:40000;
 	width:400px;
-	float:right;
 }
 
 .menu ul { list-style:none; padding-top:3px; }
