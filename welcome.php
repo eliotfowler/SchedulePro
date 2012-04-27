@@ -25,6 +25,7 @@ $fname = $user_info['fname'];
 			SchedulePro
 		</title>
 		<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
         <script src="js/custom.js"></script>
 	</head>
 	<body style="margin:0px">
@@ -86,7 +87,6 @@ $fname = $user_info['fname'];
 			</table>
 
 		</div>	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
 				var classSched = $("#class_status");
