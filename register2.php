@@ -57,8 +57,8 @@ $check2 = mysql_num_rows($check);
 //if the name exists it gives an error
 if ($check2 != 0)
 {
-	$toSend = "Sorry, the email " . $email . " is already in use.";
-	die(msg(0, $toSend));
+	$toSend = 'Sorry, the email '.$email.' is already in use.';
+	die(msg(0, $toSend);
 }
 
 $activation = md5(uniqid(rand(), true));
@@ -72,7 +72,7 @@ if (!get_magic_quotes_gpc())
 
 // now we insert it into the database
 $insert = "INSERT INTO users (fname, lname, email, password, school, activation) VALUES ('".$fname."', '".$lname."', '".$email."', '".$pw."', '".$school."', '".$activation."')";
-$add_member = mysql_query($insert);
+$add_member = mysql_query($insert) or die('Sorry, unable to add users at this time');
 
 if(mysql_affected_rows == 1) {
 	//send activation
