@@ -48,7 +48,7 @@ while($user_info = mysql_fetch_array( $check ))
 		//vardump($_SESSION['email']);
 		//then redirect them to the members area 
 		
-		//header("Location: welcome.php"); 
+		header("Location: welcome.php"); 
 	} 
 } 
 ?>

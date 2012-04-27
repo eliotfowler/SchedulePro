@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(empty($_SESSION['email'])) {
 	if(empty($_COOKIE['email'])) {
 		//echo vardump($_SESSION['email]');
