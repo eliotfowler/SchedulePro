@@ -8,7 +8,8 @@ $pw = $_POST['password'];
 
 if(!$uname | !$pass)
 {
-	header("Location: login.php"); 
+	echo "something blank";
+	//header("Location: login.php"); 
 }
 
 // checks it against the database
