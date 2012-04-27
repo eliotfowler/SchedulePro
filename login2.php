@@ -36,6 +36,7 @@ while($user_info = mysql_fetch_array( $check ))
 	else 
 	{ 
 		$email = $user_info['email'];
+		$_SESSION['email'] = $email;
 		// if login is ok then we add a cookie 
 		$email = stripslashes($email); 
 		$hour = time() + 3600; 
@@ -43,7 +44,7 @@ while($user_info = mysql_fetch_array( $check ))
 		setcookie(password_cookie, $pw, $hour); 
 
 		//then redirect them to the members area 
-		$_SESSION['email'] = $email;
+		
 		header("Location: welcome.php"); 
 	} 
 } 

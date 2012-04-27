@@ -1,6 +1,7 @@
 <?php
 if(!isset($_SESSION['email'])) {
-	header("Location: index.html");
+	if(!isset($_COOKIE['email']))
+		header("Location: index.html");
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
