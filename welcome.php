@@ -1,9 +1,12 @@
 <?php
 session_start();
+session_regenerate_id();
 if(empty($_SESSION['email'])) {
 	if(empty($_COOKIE['email'])) {
-		//echo vardump($_SESSION['email]');
-		//header("Location: index.html");
+		header("Location: index.html");
+	}
+	else {
+		$_SESSION['email'] = $_COOKIE['email'];	
 	}
 }
 ?>
