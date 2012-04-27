@@ -1,10 +1,12 @@
 <?php
-    session_start();
-    session_regenerate_id();
-    if(isset($_SESSION['email']) // if there is a valid session
-    {
-        header("Location: welcome.php");
-    }
+session_start();
+session_regenerate_id();
+if(empty($_SESSION['email'])) {
+	if(!empty($_COOKIE['email'])) {
+		$_SESSION['email'] = $_COOKIE['email'];
+		header("Location: welcome.php");
+	}
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">

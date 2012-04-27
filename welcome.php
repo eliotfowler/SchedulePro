@@ -3,7 +3,7 @@ session_start();
 session_regenerate_id();
 if(empty($_SESSION['email'])) {
 	if(empty($_COOKIE['email'])) {
-		header("Location: index.html");
+		header("Location: index.php");
 	}
 	else {
 		$_SESSION['email'] = $_COOKIE['email'];	
