@@ -11,7 +11,7 @@ if (empty($_POST['fname'])) { //if no name has been supplied
 	if (empty($_POST['lname'])) { //if no name has been supplied
 		die(msg(0,"Please enter a last name"));
 	} else {
-		$fname = $_POST['lname']; //else assign it a variable
+		$lname = $_POST['lname']; //else assign it a variable
 	}
 	
 	if (empty($_POST['email'])) {
@@ -19,18 +19,13 @@ if (empty($_POST['fname'])) { //if no name has been supplied
 	} else {
 		if(!(preg_match("/^[\.A-z0-9_\-\+]+[@][A-z0-9_\-]+([.][A-z0-9_\-]+)+[A-z]{1,4}$/", $_POST['email'])))
 			die(msg(0,"Please provide a valid email."));
+		$email = $_POST['email'];
 	}
 	
 	if (empty($_POST['pass']) || empty($_POST['pass2'])) {
 		die(msg(0,"Please enter and confirm your password."));
 	} else {
 		$pw = $_POST['pass'];
-	}
-	
-	if (empty($_POST['school'])) {
-		$error[] = 'Please pick a school.';
-	} else {
-		$school = $_POST['school'];
 	}
 	
 	// this makes sure both passwords entered match
@@ -41,6 +36,9 @@ if (empty($_POST['fname'])) { //if no name has been supplied
 
 	if(!(int)$_POST['school']) {
 		die(msg(0,"Please choose a school."));
+	} else {
+		if($_POST['school'] == 0)
+			$school = "muohio";
 	}
 
 
