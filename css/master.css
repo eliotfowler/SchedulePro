@@ -282,9 +282,9 @@ Button Menu
 .menu ul li { display:block; zoom:1; }
 
 .menu ul li a { 
-    padding:3px;
-    font-size:11px;
-    border-top:1px solid #e7e7f0;
+    padding:3px 10px;
+    font-size:12px;
+    border-top:2px solid #e7e7f0;
     border-bottom:1px solid #e7e7f0;
     display:block;
     margin:-1px 0 0 0;
