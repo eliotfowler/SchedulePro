@@ -9,7 +9,12 @@ if(empty($_SESSION['email'])) {
 		$_SESSION['email'] = $_COOKIE['email'];	
 	}
 }
-echo $_SESSION['email'];
+mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
+mysql_select_db("hackmudb") or die(mysql_error()); 
+
+$check = mysql_query("SELECT * FROM users WHERE email = '". $_SESSION['email'] ."'");
+$user_info = mysql_fetch_array( $check );
+$fname = $user_info['fname'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
