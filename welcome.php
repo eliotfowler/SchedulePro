@@ -9,6 +9,7 @@ if(empty($_SESSION['email'])) {
 		$_SESSION['email'] = $_COOKIE['email'];	
 	}
 }
+echo $_SESSION['email'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
