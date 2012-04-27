@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
     	<script src="js/login.js"></script>
+        <script type="text/javascript" src="register.js"></script>
 	</head>
 	<body style="margin:0px">
 		<div id="middle">
@@ -18,7 +19,7 @@
                 <form id="loginForm" action="login2.php" method="post">
                     <fieldset id="body">
                         <fieldset>
-                            <label for="login_name">Username or email</label>
+                            <label for="login_name">Email</label>
                             <input type="text" name="login_name" id="login_name" />
                         </fieldset>
                         <fieldset>
@@ -31,7 +32,59 @@
                     <span><a href="#">Forgot your password?</a></span>
                 </form>
             </div>
-        	</div>		
+        	</div>
+            
+            <div id="div-regForm">
+
+                <div class="form-title">Sign Up</div>
+                	<div class="form-sub-title">It's free and only takes a few minutes</div>
+                		<form id="regForm" action="submit.php" method="post">
+                
+                			<table>
+                 				<tbody>
+                  					<tr>
+                    					<td><label for="fname">First Name:</label></td>
+                    					<td><div class="input-container"><input name="fname" id="fname" type="text" /></div></td>
+                  					</tr>
+                  					<tr>
+                    					<td><label for="lname">Last Name:</label></td>
+                    					<td><div class="input-container"><input name="lname" id="lname" type="text" /></div></td>
+                  					</tr>
+                  					<tr>
+                    					<td><label for="email">Your Email:</label></td>
+                    					<td><div class="input-container"><input name="email" id="email" type="text" /></div></td>
+                  					</tr>
+                 					<tr>
+                                        <td><label for="pass">New Password:</label></td>
+                                        <td><div class="input-container"><input name="pass" id="pass" type="password" /></div></td>
+                                    </tr>
+                  					<tr>
+                    					<td><label>University:</label></td>
+                    					<td>
+                                            <div class="input-container">
+                                            <select name="school" id="school">
+                                            <option value="0">Please Select:</option>
+                                            <option value="1">Miami University (Oxford)</option>
+                                            </select>
+                                            </div>
+                                      	</td>
+                					</tr>
+                                    <tr>
+                                    	<td>&nbsp;</td>
+                                      	<td><input type="submit" class="greenButton" value="Sign Up" /><img id="loading" src="images/ajax-loader.gif" alt="working.." /></td>
+                                    </tr>
+                  
+                  
+                  			</tbody>
+                		</table>
+                
+               		 </form>
+                
+                <div id="error">
+                &nbsp;
+                </div>
+            </div>
+            		
 			<table border="0" width="100%">
 				<tr>
 					<td><img src="images/spacer.png"></td>
@@ -57,6 +110,5 @@
 
 			</table>
 		</div>	
-		
 	</body>
 </html>
