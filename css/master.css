@@ -277,7 +277,7 @@ Button Menu
 	width:inherit;
 }
 
-.menu ul { list-style:none; padding-top:3px; }
+.menu ul { list-style:none; padding-top:3px; margin-left:-10px; }
 
 .menu ul li { display:block; zoom:1; }
 
