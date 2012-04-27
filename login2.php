@@ -37,6 +37,7 @@ while($user_info = mysql_fetch_array( $check ))
 	{ 
 		$email = $user_info['email'];
 		$_SESSION['email'] = $email;
+		$_SESSION['password'] = $md5pw;
 		// if login is ok then we add a cookie 
 		$email = stripslashes($email); 
 		$hour = time() + 3600; 

@@ -1,6 +1,6 @@
 <?php
-if(!isset($_SESSION['email'])) {
-	if(!isset($_COOKIE['email']))
+if(empty($_SESSION['email'])) {
+	if(empty($_COOKIE['email']))
 		header("Location: index.html");
 }
 ?>
