@@ -8,20 +8,8 @@ if(empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['email']) ||
 }
 
 
-// is the sex selected?
-
-if(!(int)$_POST['sex-select'])
-{
-	die(msg(0,"You have to select your sex"));
-}
 
 
-// is the birthday selected?
-
-if(!(int)$_POST['day'] || !(int)$_POST['month'] || !(int)$_POST['year'])
-{
-	die(msg(0,"You have to fill in your birthday"));
-}
 
 
 // is the email valid?
