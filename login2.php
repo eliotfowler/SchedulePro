@@ -8,8 +8,7 @@ $pw = $_POST['password'];
 
 if(!$login_name | !$pass)
 {
-	echo $login_name . " " . $pw;
-	//header("Location: login.php"); 
+	header("Location: login.php"); 
 }
 
 // checks it against the database
@@ -28,9 +27,9 @@ while($user_info = mysql_fetch_array( $check ))
 	$md5pw = md5($pw);
 
 	//gives error if the password is wrong
-	if ($md5pw != $info['password'])
+	if ($md5pw != $user_info['password'])
 	{	
-		echo "pw no match";
+		
 		//header("Location: login.php");
 	}
 	else 
