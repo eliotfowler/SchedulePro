@@ -1,7 +1,7 @@
 <?php
 if(empty($_SESSION['email'])) {
 	if(empty($_COOKIE['email'])) {
-		echo vardump($_SESSION['email]');
+		//echo vardump($_SESSION['email]');
 		//header("Location: index.html");
 	}
 }
