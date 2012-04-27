@@ -38,10 +38,8 @@ $fname = $user_info['fname'];
                 </a>
                 <div class="menu">
                     <ul>
-                        <li><a href="#">Edit Profile</a></li>
                         <li><a href="#">Account Settings</a></li>
-                        <li><a href="#">Appear Offline</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
