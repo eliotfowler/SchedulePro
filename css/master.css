@@ -1,10 +1,10 @@
+html,body{width:100%;height:100%;padding:0;background:#fff;margin:0;font-family:arial}
+a { text-decoration:none }
 body {
 	
 	background-image: url("../images/bodyBackground.gif");
 	padding: 0px;
-	margin 0px;
-	margin-top: 0px;
-	padding-top:0px;
+	margin: 0px;
 }
 
 #loginContainer {
@@ -113,6 +113,7 @@ fieldset#body {
 
 #loginForm #body fieldset label {
     display:block;
+	text-align:left;
     float:none;
     margin:0 0 6px 0;
 }
@@ -169,7 +170,7 @@ input:focus {
 #middle {
 	background-image: url("../images/home2.png");
 	background-size: auto;
-	margin: 0px auto auto auto;
+	margin: auto auto auto auto;
 	width: 1038px;
 	height: 878px;	
 }
