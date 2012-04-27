@@ -8,21 +8,16 @@ $pw = $_POST['password'];
 
 if(!$login_name | !$pass)
 {
-	header("Location: login.php"); 
+	echo $login_name . " " . $pw;
+	//header("Location: login.php"); 
 }
 
 // checks it against the database
-//$check = mysql_query("SELECT * FROM users WHERE username = '". $login_name ."'") or die(mysql_error());
-
-//Gives error if user dosen't exist
-//$check2 = mysql_num_rows($check);
-//if ($check2 == 0)
-//{
 	
 $check = mysql_query("SELECT * FROM users WHERE email = '". $login_name ."'") or die(mysql_error());
 $check2 = mysql_num_rows($check);
 if($check2 == 0) {
-	header("Location: login.php"); 
+	//header("Location: login.php"); 
 }
 	
 //}
@@ -35,7 +30,8 @@ while($user_info = mysql_fetch_array( $check ))
 	//gives error if the password is wrong
 	if ($md5pw != $info['password'])
 	{	
-		header("Location: login.php");
+		echo "pw no match";
+		//header("Location: login.php");
 	}
 	else 
 	{ 
