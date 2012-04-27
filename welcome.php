@@ -27,6 +27,10 @@ $fname = $user_info['fname'];
 		<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	</head>
 	<body style="margin:0px">
+    <div id="welcome-container">
+    	<div id=userDashboard>
+        	test
+        </div>
 		<div id="welcomeM">
 		<table border="0" width="100%">
 				<tr>
@@ -79,6 +83,6 @@ $fname = $user_info['fname'];
 			});
 		
 		</script>
-		
+		</div>
 	</body>
 </html>

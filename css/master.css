@@ -175,6 +175,16 @@ input:focus {
 	height: 878px;
 }
 
+#userDashboard {
+	background: #3f3135;
+	height: 29px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+
 #welcomeB {
 	
 	background-image: url("../images/bodyBackground.gif");
