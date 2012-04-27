@@ -14,7 +14,7 @@ if (empty($_POST['fname'])) { //if no name has been supplied
 		$fname = $_POST['lname']; //else assign it a variable
 	}
 	
-	if (empty($_POST['e-mail'])) {
+	if (empty($_POST['email'])) {
 		die(msg(0,"Please enter your email"));
 	} else {
 		if(!(preg_match("/^[\.A-z0-9_\-\+]+[@][A-z0-9_\-]+([.][A-z0-9_\-]+)+[A-z]{1,4}$/", $_POST['email'])))
