@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
 mysql_select_db("hackmudb") or die(mysql_error()); 
@@ -42,6 +43,7 @@ while($user_info = mysql_fetch_array( $check ))
 		setcookie(password_cookie, $pw, $hour); 
 
 		//then redirect them to the members area 
+		$_SESSION['email'] = $email;
 		header("Location: welcome.php"); 
 	} 
 } 
