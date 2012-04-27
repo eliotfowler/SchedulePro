@@ -25,11 +25,25 @@ $fname = $user_info['fname'];
 			SchedulePro
 		</title>
 		<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <script src="js/custom.js"></script>
 	</head>
 	<body style="margin:0px">
     <div id="welcome-container">
     	<div id=userDashboard>
-        	test
+        	<div id="settings">
+                <a href="#" class="button">
+                    <span class="txt">Settings</span>
+                    <span class="ar">&#9660;</span>
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                        <li><a href="#">Appear Offline</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 		<div id="welcomeM">
 		<table border="0" width="100%">
