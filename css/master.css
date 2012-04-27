@@ -276,6 +276,7 @@ Button Menu
     display:none;
     z-index:40000;
 	width:400px;
+	float:right;
 }
 
 .menu ul { list-style:none; padding-top:3px; }
