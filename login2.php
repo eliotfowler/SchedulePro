@@ -23,7 +23,7 @@ if($check2 == 0) {
 while($user_info = mysql_fetch_array( $check )) 
 {
 	$pw = stripslashes($pw);
-	$user_info['password'] = stripslashes($info['password']);
+	$user_info['password'] = stripslashes($user_info['password']);
 	$md5pw = md5($pw);
 
 	//gives error if the password is wrong
