@@ -6,10 +6,9 @@ mysql_select_db("hackmudb") or die(mysql_error());
 $login_name = $_POST['login_name'];
 $pw = $_POST['password'];
 
-if(!$uname | !$pass)
+if(!$login_name | !$pass)
 {
-	echo "something blank";
-	//header("Location: login.php"); 
+	header("Location: login.php"); 
 }
 
 // checks it against the database
@@ -23,8 +22,7 @@ if(!$uname | !$pass)
 $check = mysql_query("SELECT * FROM users WHERE email = '". $login_name ."'") or die(mysql_error());
 $check2 = mysql_num_rows($check);
 if($check2 == 0) {
-	echo "none email";
-	//header("Location: login.php"); 
+	header("Location: login.php"); 
 }
 	
 //}
@@ -37,8 +35,7 @@ while($user_info = mysql_fetch_array( $check ))
 	//gives error if the password is wrong
 	if ($md5pw != $info['password'])
 	{	
-		echo "passwords dont match";
-		//header("Location: login.php");
+		header("Location: login.php");
 	}
 	else 
 	{ 
