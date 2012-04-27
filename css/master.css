@@ -186,7 +186,7 @@ input:focus {
 }
 /*settings menu*/
 
-#settings { width:192px; top:50%; left:50%; margin:-30px 0 0 -96px; float:right;}
+#settings { width:192px; top:50%; left:50%; margin:0 0 0 0; float:right;}
 
 /*---------------------------
 Button Default
@@ -287,7 +287,7 @@ Button Menu
     border-top:2px solid #e7e7f0;
     border-bottom:1px solid #e7e7f0;
     display:block;
-    margin:-1px 0 0 0;
+    margin:-10px 0 0 -10px;
     position:relative;
     text-shadow:0 1px 1px #fff;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 );
