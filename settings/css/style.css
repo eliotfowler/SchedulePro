@@ -130,7 +130,7 @@ Button Menu
 .menu ul li a span {
     position:absolute;
     bottom:-1px;
-    left:0; right:0;
+    left:50; right:0;
     height:1px;
     display:block;
     background:#d7dbea;
