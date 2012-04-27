@@ -229,14 +229,13 @@ td{
 }
 
 #div-regForm,.registered{	
-	position:absolute;
 	border:3px solid #eeeeee;
 	padding:15px;
 	
 	background:url(../images/bg.jpg) repeat-x #cbd4e4;
 	color:#203360;
 	
-	margin:280px 50px; 40px auto;
+	margin:0 auto; 40px auto;
 	width:400px;
 }
 
