@@ -186,7 +186,7 @@ input:focus {
 }
 /*settings menu*/
 
-#settings { width:192px; top:50%; left:50%; margin:0 0 0 0; float:right;}
+#settings { width:192px; top:50%; left:50%; margin:-30px 0 0 -96px; float:right;}
 
 /*---------------------------
 Button Default
