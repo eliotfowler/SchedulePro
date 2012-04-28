@@ -1,3 +1,21 @@
+<?php
+session_start();
+session_regenerate_id();
+if(empty($_SESSION['email'])) {
+	if(empty($_COOKIE['email'])) {
+		header("Location: index.php");
+	}
+	else {
+		$_SESSION['email'] = $_COOKIE['email'];	
+	}
+}
+mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
+mysql_select_db("hackmudb") or die(mysql_error()); 
+
+$check = mysql_query("SELECT * FROM users WHERE email = '". $_SESSION['email'] ."'");
+$user_info = mysql_fetch_array( $check );
+$fname = $user_info['fname'];
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
@@ -7,8 +25,25 @@
 			SchedulePro
 		</title>
 		<link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
+        <script src="js/custom.js"></script>
 	</head>
 	<body style="margin:0px">
+    <div id="welcome-container">
+    	<div id=userDashboard>
+        	<div id="settings">
+                <a href="#" class="button">
+                    <span class="txt">Settings</span>
+                    <span class="ar">&#9660;</span>
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Account Settings</a></li>
+                        <li><a href="includes/logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 		<div id="welcomeM">
 		<table border="0" width="100%">
 				<tr>
@@ -50,7 +85,6 @@
 			</table>
 
 		</div>	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
 				var classSched = $("#class_status");
@@ -61,6 +95,6 @@
 			});
 		
 		</script>
-		
+		</div>
 	</body>
 </html>

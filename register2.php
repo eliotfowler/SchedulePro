@@ -11,21 +11,26 @@ if (empty($_POST['fname'])) { //if no name has been supplied
 	if (empty($_POST['lname'])) { //if no name has been supplied
 		die(msg(0,"Please enter a last name"));
 	} else {
-		$lname = $_POST['lname']; //else assign it a variable
+		$fname = $_POST['lname']; //else assign it a variable
 	}
 	
-	if (empty($_POST['email'])) {
+	if (empty($_POST['e-mail'])) {
 		die(msg(0,"Please enter your email"));
 	} else {
 		if(!(preg_match("/^[\.A-z0-9_\-\+]+[@][A-z0-9_\-]+([.][A-z0-9_\-]+)+[A-z]{1,4}$/", $_POST['email'])))
 			die(msg(0,"Please provide a valid email."));
-		$email = $_POST['email'];
 	}
 	
 	if (empty($_POST['pass']) || empty($_POST['pass2'])) {
 		die(msg(0,"Please enter and confirm your password."));
 	} else {
 		$pw = $_POST['pass'];
+	}
+	
+	if (empty($_POST['school'])) {
+		$error[] = 'Please pick a school.';
+	} else {
+		$school = $_POST['school'];
 	}
 	
 	// this makes sure both passwords entered match
@@ -36,9 +41,6 @@ if (empty($_POST['fname'])) { //if no name has been supplied
 
 	if(!(int)$_POST['school']) {
 		die(msg(0,"Please choose a school."));
-	} else {
-		if($_POST['school'] == 0)
-			$school = "muohio";
 	}
 
 
@@ -55,8 +57,8 @@ $check2 = mysql_num_rows($check);
 //if the name exists it gives an error
 if ($check2 != 0)
 {
-	$toSend = "Sorry, the email " . $email . " is already in use.";
-	die(msg(0, $toSend));
+	$toSend = 'Sorry, the email '.$email.' is already in use.';
+	die(msg(0, $toSend);
 }
 
 $activation = md5(uniqid(rand(), true));
@@ -70,7 +72,7 @@ if (!get_magic_quotes_gpc())
 
 // now we insert it into the database
 $insert = "INSERT INTO users (fname, lname, email, password, school, activation) VALUES ('".$fname."', '".$lname."', '".$email."', '".$pw."', '".$school."', '".$activation."')";
-$add_member = mysql_query($insert);
+$add_member = mysql_query($insert) or die('Sorry, unable to add users at this time');
 
 if(mysql_affected_rows == 1) {
 	//send activation

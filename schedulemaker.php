@@ -2,7 +2,8 @@
 ini_set('display_errors', 'Off');
 error_reporting(E_ALL);
 
-
+$con = mysql_connect("localhost","hackmu","hackpass");
+mysql_select_db("hackmudb", $con);
 
 //$JSONin = $_POST["preferences"];
 
@@ -19,13 +20,13 @@ $class_takeable = findTakeableClasses();
         <?
         function findTakeableClasses() {
             
-            $con = mysql_connect("localhost","hackmu","hackpass");
+            /*$con = mysql_connect("localhost","hackmu","hackpass");
 
             if (!$con){
                 die('Could not connect: ' . mysql_error());
             }
 
-            mysql_select_db("hackmudb", $con);
+            mysql_select_db("hackmudb", $con);*/
             
             
             $user = "eliot";
@@ -36,9 +37,6 @@ $class_takeable = findTakeableClasses();
             $takeable_classes = array();
             $schedule = array();
             //echo $user . " is a computer science major. <br>";
-            
-            
-            
             
             
             $resource = mysql_query("SELECT *" .
@@ -267,9 +265,12 @@ $class_takeable = findTakeableClasses();
             }
             
             //var_dump($schedule);
-            mysql_close($con);
             return $schedule;
     }
+	
+	function findSchedule($classes) {
+		
+	}
     
 ?>
     </body>
