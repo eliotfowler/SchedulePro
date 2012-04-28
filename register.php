@@ -36,10 +36,7 @@ if (empty($_POST['fname'])) { //if no name has been supplied
 
 	if(!(int)$_POST['school']) {
 		die(msg(0,"Please choose a school."));
-	} else {
-		if($_POST['school'] == 0)
-			$school = "muohio";
-	}
+	} else $school = "muohio";
 
 
 
