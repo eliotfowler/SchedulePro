@@ -22,7 +22,7 @@ $fname = $user_info['fname'];
     <div id="welcome-container">
     	<div id=userDashboard>
         	<div id="name">
-            	<?php echo "<col=red>Hello, " . $user_info['fname'] . " " . $user_info['lname']. "</col>"; ?>
+            	<?php echo "Hello, " . $user_info['fname'] . " " . $user_info['lname']; ?>
             </div>
         	<div id="settings">
                 <a href="#" class="button">
