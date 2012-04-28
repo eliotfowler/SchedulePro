@@ -87,7 +87,7 @@ $html = <<<EOM
 <html>
   <head></head>
   <body>
-  	$fname . " " . $lname . ",<br>";
+  	$fname $lname,<br>
     Thank you for registering with SchedulePro! <br />
 	Please click the following link to activate your account:<br />
     $activation_link
@@ -102,8 +102,7 @@ EOM;
 $from = array('eliot@SchedulePro.com' => 'SchedulePro');
 // Email recipients
 $to = array(
-  $email=>$fname . " " . $lname,
-  "fowlerje@muohio.edu"=>"poopy pants"
+  $email=>$fname
 );
 // Email subject
 $subject = 'Welcome to SchedulePro!';
