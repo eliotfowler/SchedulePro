@@ -176,13 +176,17 @@ input:focus {
 }
 
 #userDashboard {
-	background: #3f3135;
+	background: #6A7DEB;
 	height: 35px;
 	left: 0;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 100;
+}
+
+#userDashboard name {
+	float:left;	
 }
 /*settings menu*/
 

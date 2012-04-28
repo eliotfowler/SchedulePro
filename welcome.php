@@ -1,20 +1,10 @@
 <?php
-session_start();
-session_regenerate_id();
-if(empty($_SESSION['email'])) {
-	if(empty($_COOKIE['email'])) {
-		header("Location: index.php");
-	}
-	else {
-		$_SESSION['email'] = $_COOKIE['email'];	
-	}
-}
-mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
-mysql_select_db("hackmudb") or die(mysql_error()); 
+require_once "includes/config.php";
 
 $check = mysql_query("SELECT * FROM users WHERE email = '". $_SESSION['email'] ."'");
 $user_info = mysql_fetch_array( $check );
 $fname = $user_info['fname'];
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
@@ -31,6 +21,9 @@ $fname = $user_info['fname'];
 	<body style="margin:0px">
     <div id="welcome-container">
     	<div id=userDashboard>
+        	<div id="name">
+            	<?php echo $user_info['fname'] . " " . $user_info['lname']; ?>
+            </div>
         	<div id="settings">
                 <a href="#" class="button">
                     <span class="txt">Settings</span>

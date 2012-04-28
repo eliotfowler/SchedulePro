@@ -22,39 +22,6 @@ if(!empty($_COOKIE['email'])) {
         <script type="text/javascript" src="js/register.js"></script>
 	</head>
 	<body style="margin:0px">
-        <div id="fb-root"></div>
-			<script>
-             	window.fbAsyncInit = function() {
-                FB.init({
-                  appId      : '233879613383885', // App ID
-                  channelUrl : 'http://www.schedulepro.eliotfowler.com/SchdeulePro/channel.html', // Channel File
-                  status     : true, // check login status
-                  cookie     : true, // enable cookies to allow the server to access the session
-                  xfbml      : true  // parse XFBML
-                });
-            
-                // Additional initialization code here
-              };
-            
-              // Load the SDK Asynchronously
-              (function(d){
-                 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-                 if (d.getElementById(id)) {return;}
-                 js = d.createElement('script'); js.id = id; js.async = true;
-                 js.src = "//connect.facebook.net/en_US/all.js";
-                 ref.parentNode.insertBefore(js, ref);
-               }(document));
-			   
-				FB.Event.subscribe('auth.login', function(response) {
-					login();
-				});
-				
-				function login(){
-					FB.api('/me', function(response) {
-						alert('You have successfully logged in, '+response.name+"!");
-					});
-				}
-            </script>
             
 		<div id="middle">
 			<div id="loginContainer">
@@ -74,7 +41,6 @@ if(!empty($_COOKIE['email'])) {
                         <input type="submit" id="submit" value="Login" />
                         <label for="remember"><input type="checkbox" id="remember" />Remember me</label>
                     </fieldset>
-                    <fb:login-button autologoutlink='true'  perms='email,user_birthday,status_update,publish_stream'></fb:login-button>
                     <span><a href="#">Forgot your password?</a></span>
                 </form>
             </div>
