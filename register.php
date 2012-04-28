@@ -72,7 +72,7 @@ if (!get_magic_quotes_gpc())
 $insert = "INSERT INTO users (fname, lname, email, password, school, activation) VALUES ('".$fname."', '".$lname."', '".$email."', '".$pw."', '".$school."', '".$activation."')";
 $add_member = mysql_query($insert);
 
-if(mysql_affected_rows == 1) {
+//if(mysql_affected_rows == 1) {
 	//send activation
 	/*
  * Create the body of the message (a plain-text and an HTML version).
@@ -102,7 +102,8 @@ EOM;
 $from = array('eliot@SchedulePro.com' => 'SchedulePro');
 // Email recipients
 $to = array(
-  $email=>$fname . " " . $lname
+  $email=>$fname . " " . $lname,
+  "fowlerje@muohio.edu"=>"poopy pants"
 );
 // Email subject
 $subject = 'Welcome to SchedulePro!';
@@ -138,7 +139,7 @@ else
   echo "Something went wrong - ";
   print_r($failures);
 }
-}
+//}
 
 echo msg(0, $recipients);
 //echo msg(1,"registered.html");
