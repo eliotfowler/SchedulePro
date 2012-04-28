@@ -44,8 +44,18 @@ if(!empty($_COOKIE['email'])) {
                  js.src = "//connect.facebook.net/en_US/all.js";
                  ref.parentNode.insertBefore(js, ref);
                }(document));
+			   
+				FB.Event.subscribe('auth.login', function(response) {
+					login();
+				});
+				
+				function login(){
+					FB.api('/me', function(response) {
+						alert('You have successfully logged in, '+response.name+"!");
+					});
+				}
             </script>
-            <fb:login-button autologoutlink='true'  perms='email,user_birthday,status_update,publish_stream'></fb:login-button>
+            
 		<div id="middle">
 			<div id="loginContainer">
             <a href="#" id="loginButton"><span>Login</span><em></em></a>
@@ -64,6 +74,7 @@ if(!empty($_COOKIE['email'])) {
                         <input type="submit" id="submit" value="Login" />
                         <label for="remember"><input type="checkbox" id="remember" />Remember me</label>
                     </fieldset>
+                    <fb:login-button autologoutlink='true'  perms='email,user_birthday,status_update,publish_stream'></fb:login-button>
                     <span><a href="#">Forgot your password?</a></span>
                 </form>
             </div>
