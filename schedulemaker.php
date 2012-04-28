@@ -20,13 +20,13 @@ $class_takeable = findTakeableClasses();
         <?
         function findTakeableClasses() {
             
-            //$con = mysql_connect("localhost","hackmu","hackpass");
+            /*$con = mysql_connect("localhost","hackmu","hackpass");
 
             if (!$con){
                 die('Could not connect: ' . mysql_error());
             }
 
-            //mysql_select_db("hackmudb", $con);
+            mysql_select_db("hackmudb", $con);*/
             
             
             $user = "eliot";
