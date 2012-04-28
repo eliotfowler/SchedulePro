@@ -140,7 +140,7 @@ else
 }
 }
 
-echo msg(0, $failures);
+echo msg(0, $recipients);
 //echo msg(1,"registered.html");
 
 
