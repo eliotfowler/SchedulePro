@@ -186,8 +186,10 @@ input:focus {
 }
 
 #userDashboard name {
-	float:left;
-	width:200px;	
+	float:right;
+	margin-right:200px;
+	padding-top:8px;
+	width:200px;
 }
 /*settings menu*/
 
