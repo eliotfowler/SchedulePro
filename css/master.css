@@ -186,9 +186,9 @@ input:focus {
 }
 
 #userDashboard name {
-	float:right;
+	float:left;
 	margin-right:200px;
-	padding-top:8px;
+	margin-top:8px;
 	width:200px;
 	font-size:18px;
 }
