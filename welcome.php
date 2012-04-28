@@ -21,9 +21,6 @@ $fname = $user_info['fname'];
 	<body style="margin:0px">
     <div id="welcome-container">
     	<div id=userDashboard>
-        	<div id="name">
-            	<?php echo "Hello, " . $user_info['fname'] . " " . $user_info['lname']; ?>
-            </div>
         	<div id="settings">
                 <a href="#" class="button">
                     <span class="txt">Settings</span>
@@ -35,6 +32,9 @@ $fname = $user_info['fname'];
                         <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
                 </div>
+            </div>
+            <div id="name">
+            	<?php echo "Hello, " . $user_info['fname'] . " " . $user_info['lname']; ?>
             </div>
         </div>
 		<div id="welcomeM">
