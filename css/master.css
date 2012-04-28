@@ -186,7 +186,8 @@ input:focus {
 }
 
 #userDashboard name {
-	float:left;	
+	float:left;
+	width:200px;	
 }
 /*settings menu*/
 
