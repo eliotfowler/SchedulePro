@@ -1,5 +1,5 @@
 <?php
-
+include_once "lib/swift_required.php";
 // we check if everything is filled in
 
 if (empty($_POST['fname'])) { //if no name has been supplied
@@ -74,15 +74,71 @@ $add_member = mysql_query($insert);
 
 if(mysql_affected_rows == 1) {
 	//send activation
+	/*
+ * Create the body of the message (a plain-text and an HTML version).
+ * $text is your plain-text email
+ * $html is your html version of the email
+ * If the reciever is able to view html emails then only the html
+ * email will be displayed
+ */ 
+$activation_link = "http://www.schedulepro.eliotfowler.com/dev/SchedulePro/activate.php?email=".$email."&act=".$activation;
+$text = "Thank you for registering with SchedulePro!\n Please click the following link to activate your account:\n" . $activation_link . "\n\n\n Thanks,\n SchedulePro";
+$html = <<<EOM
+<html>
+  <head></head>
+  <body>
+  	$fname . " " . $lname . ",<br>";
+    Thank you for registering with SchedulePro! <br />
+	Please click the following link to activate your account:<br />
+    $activation_link
+    <br /><br /><br />Thanks,<br />
+    SchedulePro
+  </body>
+</html>
+EOM;
+ 
+ 
+// This is your From email address
+$from = array('eliot@SchedulePro.com' => 'SchedulePro');
+// Email recipients
+$to = array(
+  $email=>$fname . " " . $lname
+);
+// Email subject
+$subject = 'Welcome to SchedulePro!';
+ 
+// Login credentials
+$username = 'SchedulePro';
+$password = 'hackpass';
+ 
+// Setup Swift mailer parameters
+$transport = Swift_SmtpTransport::newInstance('smtp.sendgrid.net', 587);
+$transport->setUsername($username);
+$transport->setPassword($password);
+$swift = Swift_Mailer::newInstance($transport);
+ 
+// Create a message (subject)
+$message = new Swift_Message($subject);
+ 
+// attach the body of the email
+$message->setFrom($from);
+$message->setBody($html, 'text/html');
+$message->setTo($to);
+$message->addPart($text, 'text/plain');
+ 
+// send message 
+if ($recipients = $swift->send($message, $failures))
+{
+  // This will let us know how many users received this message
+  echo 'Message sent out to '.$recipients.' users';
 }
-
-// echo msg(1,"/member-area.php");
-
-// where member-area.php is the address on your site where registered users are
-// redirected after registration.
-
-
-
+// something went wrong =(
+else
+{
+  echo "Something went wrong - ";
+  print_r($failures);
+}
+}
 
 echo msg(1,"registered.html");
 
