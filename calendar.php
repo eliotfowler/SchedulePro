@@ -3,7 +3,7 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Untitled 1</title>
+<title>Your Schedule</title>
 <style type="text/css">
 .auto-style1 {
 	background-image: url('images/calLeftSpacer.png');
