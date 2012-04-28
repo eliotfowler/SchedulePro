@@ -10,14 +10,11 @@ $row = mysql_fetch_array( $check );
 
 if($row['activation'] != null){
 	if($row['activation'] == $act) {
-		mysql_query("UPDATE users SET activation=null WHERE email=". $email . "");
-		echo "udating table<br>";
-		//header("Location: index.php");
+		mysql_query("UPDATE users SET activation=null WHERE email='". $email . "'");
+		header("Location: index.php");
 	}
-	echo "dont match<br>";
-	//else header("Location: incorrect_activation.php");
+	else header("Location: incorrect_activation.php");
 }
-echo "not null";
-//else header("Location: index.php");
+else header("Location: index.php");
 
 ?>
