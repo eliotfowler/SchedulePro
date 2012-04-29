@@ -8,12 +8,13 @@
 <body>
 <h2>Incorrect login or password!</h2>
 <?php 
+session_start();
 	// Connects to your Database 
 	mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
 	mysql_select_db("hackmudb") or die(mysql_error()); 
 
 	//Checks if there is a login cookie
-	if(isset($_COOKIE['ID_my_site'])) //if there is, it logs you in and directes you to the members page
+	if(isset($_COOKIE['email'])) //if there is, it logs you in and directes you to the members page
 	
 	{ 
 		$login_name = $_COOKIE['email_cookie']; 
@@ -24,7 +25,7 @@
 		{
 			if ($pass != $info['password']) 
 			{
-				header("Location: index.html");
+				header("Location: index.php");
 			}
 			else
 			{
