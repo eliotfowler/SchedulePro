@@ -23,9 +23,8 @@ if($row['activation'] != null){
         
        		<body>
         		<h2>Either you have not activated your account or you attempted to activate it with the wrong key.</h2>
-        		<h3><a href="incorrect_activation?email=<? echo $email; ?>" Click here to resend the activation email. </a>
-        	</body>
-        </html>
+        		<h3><a href="incorrect_activation.php?email=<? echo $email; ?>"> Click here to resend the activation email. </a>
+        	
 
 
 <?
@@ -34,3 +33,5 @@ if($row['activation'] != null){
 else header("Location: index.php");
 
 ?>
+			</body>
+       </html>
