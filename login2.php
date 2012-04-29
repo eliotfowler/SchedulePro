@@ -9,7 +9,8 @@ $pw = $_POST['password'];
 
 if(!$login_name | !$pass)
 {
-	header("Location: login.php"); 
+	echo $login_name . $pass;
+	//header("Location: login.php"); 
 }
 
 // checks it against the database
