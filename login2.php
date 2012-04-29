@@ -7,9 +7,9 @@ mysql_select_db("hackmudb") or die(mysql_error());
 $login_name = $_POST['login_name'];
 $pw = $_POST['password'];
 
-if(!$login_name | !$pass)
+if(!$login_name | !$pw)
 {
-	echo $login_name . $pass;
+	echo $login_name . $pw;
 	//header("Location: login.php"); 
 }
 
