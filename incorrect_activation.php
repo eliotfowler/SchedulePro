@@ -8,7 +8,7 @@ $check = mysql_query("SELECT * FROM users WHERE email = '". $email ."'");
 $row = mysql_fetch_array( $check );
 
 $activation = $row['activation'];
-
+/*
 $activation_link = "http://www.schedulepro.eliotfowler.com/dev/SchedulePro/activate.php?email=".$email."&act=".$activation;
 $text = "Here is your requested activation link:\n Please click the following link to activate your account:\n" . $activation_link . "\n\n\n Thanks,\n SchedulePro";
 $html = <<<EOM
@@ -65,5 +65,5 @@ else
 {
   echo "Something went wrong - ";
   print_r($failures);
-}
+}*/
 ?>
