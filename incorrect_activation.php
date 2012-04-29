@@ -25,7 +25,7 @@ $html = <<<EOM
 </html>
 EOM;
 
-/* 
+
 // This is your From email address
 $from = array('eliot@SchedulePro.com' => 'SchedulePro');
 // Email recipients
@@ -38,7 +38,7 @@ $subject = 'Your requested activation code';
 // Login credentials
 $username = 'SchedulePro';
 $password = 'hackpass';
- 
+ /*
 // Setup Swift mailer parameters
 $transport = Swift_SmtpTransport::newInstance('smtp.sendgrid.net', 587);
 $transport->setUsername($username);
