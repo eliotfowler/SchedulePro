@@ -1,4 +1,5 @@
 <?php 
+include_once "lib/swift_required.php";
 $email = $_GET['email'];
 
 mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
@@ -53,7 +54,7 @@ $message->setFrom($from);
 $message->setBody($html, 'text/html');
 $message->setTo($to);
 $message->addPart($text, 'text/plain');
- /*
+ 
 // send message 
 if ($recipients = $swift->send($message, $failures))
 {
@@ -66,5 +67,5 @@ else
   echo "Something went wrong - ";
   print_r($failures);
 }
-*/
+
 ?>
