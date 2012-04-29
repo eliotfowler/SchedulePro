@@ -28,7 +28,7 @@ $fname = $user_info['fname'];
                 </a>
                 <div class="menu">
                     <ul>
-                        <li><a href="#">Account Settings</a></li>
+                        <li><a href="check_single_status.php">Account Settings</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
                 </div>
@@ -78,7 +78,16 @@ $fname = $user_info['fname'];
 			</table>
 
 		</div>	
+		<script>
+			$(document).ready(function(){
+				var classSched = $("#class_status");
+				classSched.click(function(event) {
+					event.preventDefault();
+					$.get("/SchedulePro/check_single_status.php");
+				});
+			})
 		
+		</script>
 		</div>
 	</body>
 </html>

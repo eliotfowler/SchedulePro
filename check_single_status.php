@@ -1,4 +1,4 @@
-<?php include("mailtest.php");
+<?php
 
 
 echo exec('whoami'); 
