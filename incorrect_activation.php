@@ -57,7 +57,7 @@ $message->addPart($text, 'text/plain');
 if ($recipients = $swift->send($message, $failures))
 {
   // This will let us know how many users received this message
-  echo 'Message sent out to '.$recipients.' users';
+  echo 'Message sent out to '.$recipients.' users <BR>Please check your email and follow the link to activate your account.';
 }
 // something went wrong =(
 else

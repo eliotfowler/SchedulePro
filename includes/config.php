@@ -13,6 +13,12 @@ if(empty($_SESSION['email'])) {
 mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
 mysql_select_db("hackmudb") or die(mysql_error()); 
 
+$check = mysql_query("SELECT * FROM users WHERE email = '". $_SESSION['email'] ."'");
+
+if(mysql_affected_rows == 0) {
+	logout();	
+}
+
 function logout() {
 	setcookie("email_cookie", '', time() - 3600);
 	setcookie("password_cookie", '', time() - 3600);
