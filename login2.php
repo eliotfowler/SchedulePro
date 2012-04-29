@@ -49,7 +49,6 @@ while($user_info = mysql_fetch_array( $check ))
 			setcookie(email_cookie, $email, $hour); 
 			setcookie(password_cookie, $pw, $hour); 
 		}
-		//vardump($_SESSION['email']);
 		//then redirect them to the members area 
 		
 		//header("Location: welcome.php"); 
