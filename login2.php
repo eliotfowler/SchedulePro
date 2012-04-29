@@ -17,7 +17,8 @@ if(!$login_name | !$pass)
 $check = mysql_query("SELECT * FROM users WHERE email = '". $login_name ."'") or die(mysql_error());
 $check2 = mysql_num_rows($check);
 if($check2 == 0) {
-	header("Location: login.php"); 
+	echo "1";
+	//header("Location: login.php"); 
 }
 	
 while($user_info = mysql_fetch_array( $check )) 
@@ -29,14 +30,14 @@ while($user_info = mysql_fetch_array( $check ))
 	//gives error if the password is wrong
 	if ($md5pw != $user_info['password'])
 	{	
-		
-		header("Location: login.php");
+		echo "2";
+		//header("Location: login.php");
 	}
 	else 
 	{
 		if($user_info['activation'] != null) {
 			echo "hi";
-			header("Location: activate.php?email=".$user_info['email']);	
+			//header("Location: activate.php?email=".$user_info['email']);	
 		}
 		echo "hi2";
 		$email = $user_info['email'];
@@ -51,7 +52,7 @@ while($user_info = mysql_fetch_array( $check ))
 		}
 		//then redirect them to the members area 
 		
-		header("Location: welcome.php"); 
+		//header("Location: welcome.php"); 
 	} 
 } 
 ?>
