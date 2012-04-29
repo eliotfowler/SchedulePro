@@ -30,9 +30,7 @@ EOM;
 // This is your From email address
 $from = array('eliot@SchedulePro.com' => 'SchedulePro');
 // Email recipients
-$to = array(
-  $email=>$row['fname']
-);
+$to = array($email=>$row['fname']);
 // Email subject
 $subject = 'Your requested activation code';
  
