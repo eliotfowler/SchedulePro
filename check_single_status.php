@@ -2,7 +2,7 @@
 mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
 mysql_select_db("hackmudb") or die(mysql_error()); 
 
-$file=fopen("/var/www/SchedulePro/cse_list","r");
+$file=fopen("/var/www/dev/SchedulePro/cse_list","r");
 while(!feof($file))
   {
     $line = split(",",fgets($file));
