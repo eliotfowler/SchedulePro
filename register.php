@@ -137,8 +137,8 @@ else
 }
 //}
 
-echo msg(0, $recipients);
-//echo msg(1,"registered.html");
+//echo msg(0, $recipients);
+echo msg(1,"registered.html");
 
 
 function msg($status,$txt)

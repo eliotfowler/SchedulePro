@@ -17,10 +17,9 @@ if(!$login_name | !$pass)
 $check = mysql_query("SELECT * FROM users WHERE email = '". $login_name ."'") or die(mysql_error());
 $check2 = mysql_num_rows($check);
 if($check2 == 0) {
-	//header("Location: login.php"); 
+	header("Location: login.php"); 
 }
 	
-//}
 while($user_info = mysql_fetch_array( $check )) 
 {
 	$pw = stripslashes($pw);
@@ -34,7 +33,10 @@ while($user_info = mysql_fetch_array( $check ))
 		//header("Location: login.php");
 	}
 	else 
-	{ 
+	{
+		if($user_info['activation'] != null) {
+			header("Location: incorrect_activation.php?email=".$user_info['email']);	
+		}
 		$email = $user_info['email'];
 		$_SESSION['email'] = $email;
 		$_SESSION['password'] = $md5pw;

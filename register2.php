@@ -58,7 +58,7 @@ $check2 = mysql_num_rows($check);
 if ($check2 != 0)
 {
 	$toSend = 'Sorry, the email '.$email.' is already in use.';
-	die(msg(0, $toSend);
+	die(msg(0, $toSend));
 }
 
 $activation = md5(uniqid(rand(), true));
