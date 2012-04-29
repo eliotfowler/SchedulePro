@@ -24,8 +24,8 @@ $html = <<<EOM
   </body>
 </html>
 EOM;
- 
- 
+
+/* 
 // This is your From email address
 $from = array('eliot@SchedulePro.com' => 'SchedulePro');
 // Email recipients
@@ -66,4 +66,5 @@ else
   echo "Something went wrong - ";
   print_r($failures);
 }
+*/
 ?>
