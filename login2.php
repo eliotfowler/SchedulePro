@@ -35,8 +35,10 @@ while($user_info = mysql_fetch_array( $check ))
 	else 
 	{
 		if($user_info['activation'] != null) {
-			header("Location: incorrect_activation.php?email=".$user_info['email']);	
+			echo "hi";
+			header("Location: activate.php?email=".$user_info['email']);	
 		}
+		echo "hi2";
 		$email = $user_info['email'];
 		$_SESSION['email'] = $email;
 		$_SESSION['password'] = $md5pw;
@@ -50,7 +52,7 @@ while($user_info = mysql_fetch_array( $check ))
 		//vardump($_SESSION['email']);
 		//then redirect them to the members area 
 		
-		header("Location: welcome.php"); 
+		//header("Location: welcome.php"); 
 	} 
 } 
 ?>
