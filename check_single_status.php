@@ -1,7 +1,7 @@
 <?php
 
 
-echo exec('whoami'); 
+echo exec('perl get_courses.pl'); 
 /*
 $file=fopen("/var/www/SchedulePro/CSE_List.txt","r");
 while(!feof($file))
