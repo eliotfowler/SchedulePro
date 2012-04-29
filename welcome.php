@@ -78,16 +78,7 @@ $fname = $user_info['fname'];
 			</table>
 
 		</div>	
-		<script>
-			$(document).ready(function(){
-				var classSched = $("#class_status");
-				classSched.click(function(event) {
-					event.preventDefault();
-					$.get("/SchedulePro/check_single_status.php");
-				});
-			});
 		
-		</script>
 		</div>
 	</body>
 </html>
