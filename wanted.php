@@ -86,6 +86,10 @@ else
   print_r($failures);
 }
 					//notify the database that the email was sent	
+					$uquery = mysql_query("UPDATE watch_list
+					  					   SET sent = 1
+					  					   WHERE crn = '".$pvalue[0]."' AND uid = '".$qresult['uid']."'");
+					
 				}
 			}
 	}
