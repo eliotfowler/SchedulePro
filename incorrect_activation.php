@@ -38,7 +38,7 @@ $subject = 'Your requested activation code';
 // Login credentials
 $username = 'SchedulePro';
 $password = 'hackpass';
- /*
+ 
 // Setup Swift mailer parameters
 $transport = Swift_SmtpTransport::newInstance('smtp.sendgrid.net', 587);
 $transport->setUsername($username);
@@ -53,7 +53,7 @@ $message->setFrom($from);
 $message->setBody($html, 'text/html');
 $message->setTo($to);
 $message->addPart($text, 'text/plain');
- 
+ /*
 // send message 
 if ($recipients = $swift->send($message, $failures))
 {
