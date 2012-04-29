@@ -1,18 +1,15 @@
 <?php
+mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
+mysql_select_db("hackmudb") or die(mysql_error()); 
 
-
-echo exec('perl get_courses.pl'); 
-/*
-$file=fopen("/var/www/SchedulePro/CSE_List.txt","r");
+$file=fopen("/var/www/SchedulePro/cse_list","r");
 while(!feof($file))
   {
     $line = split(",",fgets($file));
-    if($line[0] == 59428) {
-        if($line[2] - $line[1] == 1) {
-            //send();
+        if($line[2] - $line[1] <= 0) {
+            mysql_query("INSERT INTO watch_list VALUES (uid, crn) AS (19, $line[0])");
         }
-    }
   }
 fclose($file);
-*/
+
 ?>
