@@ -6,7 +6,12 @@ $query = mysql_query("SELECT email, users.uid, crn, fname, lname
 					  FROM users, watch_list
 					  WHERE users.uid = watch_list.uid");
 
-$qresult = mysql_fetch_assoc($query);
+$qresult = array();
+
+while($row = mysql_fetch_assoc($query)) {
+	$qresult[] = $row;	
+}
+
 var_dump($qresult);
 
 $pinged = array();
