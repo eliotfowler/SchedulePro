@@ -45,7 +45,7 @@ $html = <<<EOM
   <body>
 	$fname $lname,<br>
 	A class you added to your watch list has opened up! <br />
-	Class with crn $pvalue[0] has at least a spot open! Quick go to <a href="https://www.bannerweb.muohio.edu">BannerWeb</a> and sign up! <BR />
+	Class with crn $pvalue[0] has at least a spot open! Quick go to <a href="https://bannerweb.muohio.edu/pls/banweb/twbkwbis.P_GenMenu?name=homepage">BannerWeb</a> and sign up! <BR />
 	<br /><br /><br />Thanks,<br />
 	SchedulePro
   </body>
@@ -61,7 +61,7 @@ $to = array(
 );
 echo "mailing to " . $qvalue['email'] . " with name " . $qvalue['fname'] . "<br>";
 // Email subject
-$subject = 'Class has opened up!';
+$subject = 'Class '. $qvalue['crn'] .' has opened up!';
  
 // Login credentials
 $username = 'SchedulePro';
@@ -97,7 +97,7 @@ else
 					//notify the database that the email was sent	
 					$uquery = mysql_query("UPDATE watch_list
 					  					   SET sent = 1
-					  					   WHERE crn = '".$pvalue[0]."' AND uid = '".$qresult['uid']."'");
+					  					   WHERE crn = '".$pvalue[0]."' AND uid = '".$qvalue['uid']."'");
 					
 				}
 			}
