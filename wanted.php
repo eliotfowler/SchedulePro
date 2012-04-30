@@ -28,7 +28,7 @@ foreach ($qresult as $qkey => $qvalue) {
 	echo "found class " . $pvalue[0] . "<BR>";
 			if($pvalue[0] == $qvalue['crn']) {
 				echo "<br>EQUAL!<br>";
-				if($pvalue[2] - $pvalue[1] > 0 && $qresult['sent'] == 0) {
+				if($pvalue[2] - $pvalue[1] > 0 && $qvalue['sent'] == 0) {
 					echo "SENDING EMAIL!!!!<br><br><br>";
 					//send email
 					/*
@@ -57,9 +57,9 @@ echo "created html message<BR>";
 $from = array('eliot@SchedulePro.com' => 'SchedulePro');
 // Email recipients
 $to = array(
-  $qresult['email']=>$qresult['fname']
+  $qvalue['email']=>$qvalue['fname']
 );
-echo "mailing to " . $qresult['email'] . " with name " . $qresult['fname'] . "<br>";
+echo "mailing to " . $qvalue['email'] . " with name " . $qvalue['fname'] . "<br>";
 // Email subject
 $subject = 'Class has opened up!';
  
