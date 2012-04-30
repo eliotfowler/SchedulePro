@@ -51,7 +51,7 @@ $html = <<<EOM
   </body>
 </html>
 EOM;
- 
+echo "created html message<BR>";
  
 // This is your From email address
 $from = array('eliot@SchedulePro.com' => 'SchedulePro');
@@ -59,6 +59,7 @@ $from = array('eliot@SchedulePro.com' => 'SchedulePro');
 $to = array(
   $qresult['email']=>$qresult['fname']
 );
+echo "mailing to " . $qresult['email'] . " with name " . $qresult['fname'] . "<br>";
 // Email subject
 $subject = 'Class has opened up!';
  
@@ -80,7 +81,7 @@ $message->setFrom($from);
 $message->setBody($html, 'text/html');
 $message->setTo($to);
 $message->addPart($text, 'text/plain');
- 
+ echo "sending<br>";
 // send message 
 if ($recipients = $swift->send($message, $failures))
 {
