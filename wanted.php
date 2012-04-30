@@ -12,8 +12,6 @@ while($row = mysql_fetch_assoc($query)) {
 	$qresult[] = $row;	
 }
 
-var_dump($qresult);
-
 $pinged = array();
 
 $file=fopen("/var/www/dev/SchedulePro/cse_list","r");
