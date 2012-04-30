@@ -2,7 +2,7 @@
 mysql_connect("localhost", "hackmu", "hackpass") or die(mysql_error()); 
 mysql_select_db("hackmudb") or die(mysql_error()); 
 
-$query = mysql_query("SELECT email, users.uid, crn, fname, lname
+$query = mysql_query("SELECT email, users.uid, crn, fname, lname, sent
 					  FROM users, watch_list
 					  WHERE users.uid = watch_list.uid");
 
