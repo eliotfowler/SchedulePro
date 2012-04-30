@@ -25,7 +25,7 @@ foreach ($qresult as $qkey => $qvalue) {
 			if($pvalue[0] == $qvalue['crn']) {
 				echo "<br>EQUAL!<br>";
 				if($pvalue[2] - $pvalue[1] > 0 && $qresult['sent'] == 0) {
-					echo "SENDING EMAIL!!!!<br><br><br>;
+					echo "SENDING EMAIL!!!!<br><br><br>";
 					//send email
 					/*
  * Create the body of the message (a plain-text and an HTML version).
