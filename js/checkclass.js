@@ -19,7 +19,7 @@ function class_search()
 	var varjson = '{ "val" : "' + $("#search_text").val() + '" }';
 	
 	$.post("class_search.php", 
-			{ val: varjson }, 
+			{ val: $("#search_text").val() }, 
 			function(ret) {
 				alert(ret);
 			}, "json");
