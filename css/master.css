@@ -349,7 +349,7 @@ Button Menu li hover
 	height: 878px;	
 }
 
-#check-main {
+#checkclass-container {
 	background-image: url("../images/miami_template.png");
 	background-size: auto;
 	margin: auto auto auto auto;
@@ -459,7 +459,7 @@ Check Class Search Bar
 
 #check-main{
 	position:relative;
-	top:200px;
+	top:100px;
 }
 
 .cf:before, .cf:after{
