@@ -1,5 +1,9 @@
 <?php include "config.php";
 
+$safe = checkValues($_GET['val']);
+echo $safe;
+$input = explode(" ", $safe);
+
 function checkValues($value)
 {
 	 // Use this function on all those values where you want to check for both sql injection and cross site scripting
@@ -23,9 +27,7 @@ function checkValues($value)
 	
 }
 
-$safe = checkValues($_GET['val']);
-echo $_GET['val'];
-$input = explode(" ", $safe);
+
 
 
 var_dump($input[0]);
