@@ -38,7 +38,7 @@ $fname = $user_info['fname'];
     <div id="check-main">
         <form id="searchform" class="form-wrapper cf">
             <input type="text" id="search_text" placeholder="Search here..." required>
-            <button id="search" onclick="" type="submit">Search</button>
+            <button id="search" type="submit">Search</button>
         </form>
     </div>
     <br clear="all" />
