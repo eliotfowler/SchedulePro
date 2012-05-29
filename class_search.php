@@ -24,7 +24,7 @@ function checkValues($value)
 }
 
 $safe = checkValues($_GET['val']);
-echo $safe;
+echo $_GET['val'];
 $input = explode(" ", $safe);
 
 
