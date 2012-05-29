@@ -45,7 +45,7 @@ $fname = $user_info['fname'];
     	
     <div id="results">
         <div id="sub_cont">	
-        
+        	Positioning
 		</div>
     </div>
 </div>
