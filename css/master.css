@@ -462,6 +462,12 @@ Check Class Search Bar
 	top:300px;
 }
 
+#results {
+		position:absolute;
+		top:500px;
+		left:300px;
+	}
+
 .cf:before, .cf:after{
       content:"";
       display:table;
@@ -581,6 +587,4 @@ Check Class Search Bar
         padding: 0;
     }
 	
-	#results {
-		position:relative;
-	}
+	
