@@ -29,5 +29,5 @@ if($safe) {
 	$input = explode(" ", $_REQUEST['val']);
 }
 
-var_dump($input);
-return $input[0] . " " . $input[1];
+var_dump($input[0]);
+return $input[0];
