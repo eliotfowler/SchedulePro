@@ -467,6 +467,12 @@ Check Class Search Bar
 		top:500px;
 		left:100px;
 	}
+	
+	#results #sub_cont {
+		width: 490px;
+		display:none;
+		height:400px;	
+	}
 
 .cf:before, .cf:after{
       content:"";
