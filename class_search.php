@@ -29,4 +29,4 @@ function checkValues($value)
 
 
 
-return $postVal;
+echo $postVal;
