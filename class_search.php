@@ -21,9 +21,9 @@ function checkValues($value)
 	
 	 // Strip HTML Tags
 	 $value = strip_tags($value);
-	/*
+	
 	// Quote the value
-	$value = mysql_real_escape_string($value);*/
+	$value = mysql_real_escape_string($value);
 	return $value;
 	
 }
