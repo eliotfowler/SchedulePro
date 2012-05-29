@@ -16,8 +16,7 @@ $fname = $user_info['fname'];
 <script src="js/custom.js"></script>
 </head>
 <body>
-<div id="checkclass-container">
-    	<div id=userDashboard>
+<div id=userDashboard>
         	<div id="settings">
                 <a href="#" class="button">
                     <span class="txt">Settings</span>
@@ -34,6 +33,8 @@ $fname = $user_info['fname'];
             	<?php echo "Hello, " . $user_info['fname'] . " " . $user_info['lname']; ?>
             </div>
         </div>
+<div id="checkclass-container">
+    	
         <div id="check-main">
         	<form class="form-wrapper cf">
 				<input type="text" placeholder="Search here..." required>
