@@ -7,7 +7,7 @@ $input = explode(" ", $safe);
 
 function checkValues($value)
 {
-	 // Use this function on all those values where you want to check for both sql injection and cross site scripting
+	 /*// Use this function on all those values where you want to check for both sql injection and cross site scripting
 	 //Trim the value
 	 $value = trim($value);
 	 
@@ -23,7 +23,7 @@ function checkValues($value)
 	 $value = strip_tags($value);
 	
 	// Quote the value
-	$value = mysql_real_escape_string($value);
+	$value = mysql_real_escape_string($value);*/
 	return $value;
 	
 }
