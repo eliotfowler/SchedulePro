@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$('#searchform').submit(function(e) {
-
+		alert("here");
 		class_search();
 		e.preventDefault();
 		
