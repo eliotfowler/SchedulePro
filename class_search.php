@@ -1,6 +1,7 @@
 <?php include "config.php";
 
-$safe = checkValues($_GET['val']);
+$getVal = $_GET['val'];
+$safe = checkValues($getVal);
 echo $safe;
 $input = explode(" ", $safe);
 
