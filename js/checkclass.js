@@ -11,7 +11,6 @@ $(document).ready(function(){
 
 function class_search()
 {
-	$("#results #sub_cont").load("search.php?val=" + $("#search_text").val(), hideLoader());
+	$("#results #sub_cont").load("class_search.php?val=" + $("#search_text").val(), hideLoader());
 	
-
 }
