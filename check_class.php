@@ -1,3 +1,11 @@
+<?php
+require_once "includes/config.php";
+
+$check = mysql_query("SELECT * FROM users WHERE email = '". $_SESSION['email'] ."'");
+$user_info = mysql_fetch_array( $check );
+$fname = $user_info['fname'];
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
