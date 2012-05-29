@@ -29,4 +29,4 @@ function checkValues($value)
 
 
 
-echo $input[0] . $input[1];
+echo json_encode($input[0] . $input[1]);
