@@ -30,4 +30,6 @@ if($safe) {
 }
 
 var_dump($input[0]);
+echo $input[0];
+echo "hi";
 return $input[0];
