@@ -16,4 +16,12 @@ function class_search()
 		alert("load worked");	
 	});
 	
+	var varjson = '{ "var" : "' + $("#search_text").val() + '" }';
+	
+	$.post("class_search.php", 
+			{ senddata: varjson }, 
+			function(ret) {
+				alert(ret);
+			}, "json");
+	
 }

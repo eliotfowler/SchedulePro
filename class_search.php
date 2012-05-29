@@ -1,7 +1,7 @@
 <?php include "config.php";
 
-$getVal = $_GET['val'];
-$safe = checkValues($getVal);
+$postVal = $_POST['val'];
+$safe = checkValues($postVal);
 $input = explode(" ", $safe);
 
 function checkValues($value)
@@ -28,4 +28,4 @@ function checkValues($value)
 
 
 
-echo $input[0] . $input[1];
+return $input[0] . $input[1];
