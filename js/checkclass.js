@@ -1,8 +1,17 @@
-$(".search").click(function(){
-	//show the loading bar
-	showLoader();
-	$('#sub_cont').fadeIn(1500);
- 
-	$("#content #sub_cont").load("search.php?val=" + $("#search").val(), hideLoader());
- 
+$(document).ready(function(){
+	
+	$('#searchform').submit(function(e) {
+
+		class_search();
+		e.preventDefault();
+		
+	});
+	
 });
+
+function class_search()
+{
+	$("#results #sub_cont").load("search.php?val=" + $("#search_text").val(), hideLoader());
+	
+
+}
