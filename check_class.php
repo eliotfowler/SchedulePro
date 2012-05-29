@@ -44,9 +44,6 @@ $fname = $user_info['fname'];
     <br clear="all" />
     	
     <div id="results">
-        <div class="search-background">
-			<label><img src="images/loader.gif" alt="" /></label>
-		</div>
         <div id="sub_cont">	
         
 		</div>

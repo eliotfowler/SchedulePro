@@ -580,3 +580,8 @@ Check Class Search Bar
         border: 0;
         padding: 0;
     }
+	
+	#results {
+		position:relative;
+		top:500px;	
+	}
