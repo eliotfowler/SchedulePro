@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 function class_search()
 {
-	alert("here");
+	alert($("#search_text").val());
 	$("#results #sub_cont").load("class_search.php?val=" + $("#search_text").val());
 	
 }
