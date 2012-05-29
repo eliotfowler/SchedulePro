@@ -29,4 +29,4 @@ function checkValues($value)
 
 
 
-return $input[0];
+return $postVal;
