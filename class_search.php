@@ -7,10 +7,10 @@ $input = explode(" ", $safe);
 
 function checkValues($value)
 {
-	 /*// Use this function on all those values where you want to check for both sql injection and cross site scripting
+	 // Use this function on all those values where you want to check for both sql injection and cross site scripting
 	 //Trim the value
 	 $value = trim($value);
-	 
+	 /*
 	// Stripslashes
 	if (get_magic_quotes_gpc()) {
 		$value = stripslashes($value);
