@@ -47,8 +47,11 @@ $fname = $user_info['fname'];
 						<img src="images/welcomeLeftSpacer.png">
 					</td>
 					<td width="100%">
+                    
 					<a href="calendar.php" onMouseOver="document.quickSchedule.src='images/quickScheduleB.png';" onMouseOut="document.quickSchedule.src='images/quickSchedule.png';">
- <img src="images/quickSchedule.png" name="quickSchedule" width="219" height="212" border="0"></a><a href="" onMouseOver="document.customSchedule.src='images/customScheduleB.png';" onMouseOut="document.customSchedule.src='images/customSchedule.png';">
+ <img src="images/quickSchedule.png" name="quickSchedule" width="219" height="212" border="0"></a>
+ 
+ <a href="" onMouseOver="document.customSchedule.src='images/customScheduleB.png';" onMouseOut="document.customSchedule.src='images/customSchedule.png';">
  <img src="images/customSchedule.png" name="customSchedule" border="0"></a>
 					</td>
 				</tr>
@@ -77,17 +80,7 @@ $fname = $user_info['fname'];
 
 			</table>
 
-		</div>	
-		<script>
-			$(document).ready(function(){
-				var classSched = $("#class_status");
-				classSched.click(function(event) {
-					event.preventDefault();
-					$.get("/SchedulePro/check_single_status.php");
-				});
-			})
-		
-		</script>
+		</div>
 		</div>
 	</body>
 </html>
