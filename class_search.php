@@ -2,7 +2,6 @@
 
 $getVal = $_GET['val'];
 $safe = checkValues($getVal);
-echo $safe;
 $input = explode(" ", $safe);
 
 function checkValues($value)
@@ -22,8 +21,6 @@ function checkValues($value)
 	 // Strip HTML Tags
 	 $value = strip_tags($value);
 	
-	// Quote the value
-	$value = mysql_real_escape_string($value);
 	return $value;
 	
 }
@@ -31,7 +28,5 @@ function checkValues($value)
 
 
 
-var_dump($input[0]);
-//echo $input[0];
-//echo "hi";
+echo $input[0];
 return $input[0];
