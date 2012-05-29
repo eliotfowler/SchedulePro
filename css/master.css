@@ -457,6 +457,11 @@ td{
 Check Class Search Bar
 ---------------------------*/
 
+#check-main{
+	position:relative;
+	top:100px;
+}
+
 .cf:before, .cf:after{
       content:"";
       display:table;
@@ -474,7 +479,7 @@ Check Class Search Bar
     
     .form-wrapper {
         width: 450px;
-        padding: 150px;
+        padding: 15px;
         margin: auto auto 50px auto;
         background: #444;
         background: rgba(0,0,0,.2);

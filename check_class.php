@@ -34,7 +34,6 @@ $fname = $user_info['fname'];
             </div>
         </div>
 <div id="checkclass-container">
-    	
         <div id="check-main">
         	<form class="form-wrapper cf">
 				<input type="text" placeholder="Search here..." required>
