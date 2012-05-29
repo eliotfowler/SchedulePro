@@ -14,32 +14,43 @@ $fname = $user_info['fname'];
 <link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
 <script src="js/custom.js"></script>
+<script src="js/checkclass.js"></script>
 </head>
 <body>
 <div id=userDashboard>
-        	<div id="settings">
-                <a href="#" class="button">
-                    <span class="txt">Settings</span>
-                    <span class="ar">&#9660;</span>
-                </a>
-                <div class="menu">
-                    <ul>
-                        <li><a href="check_single_status.php">Account Settings</a></li>
-                        <li><a href="includes/logout.php">Logout</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="name">
-            	<?php echo "Hello, " . $user_info['fname'] . " " . $user_info['lname']; ?>
-            </div>
+    <div id="settings">
+        <a href="#" class="button">
+            <span class="txt">Settings</span>
+            <span class="ar">&#9660;</span>
+        </a>
+        <div class="menu">
+            <ul>
+                <li><a href="check_single_status.php">Account Settings</a></li>
+                <li><a href="includes/logout.php">Logout</a></li>
+            </ul>
         </div>
+    </div>
+    <div id="name">
+        <?php echo "Hello, " . $user_info['fname'] . " " . $user_info['lname']; ?>
+    </div>
+</div>
 <div id="checkclass-container">
-        <div id="check-main">
-        	<form class="form-wrapper cf">
-				<input type="text" placeholder="Search here..." required>
-				<button type="submit">Search</button>
-			</form>
-        </div>
+    <div id="check-main">
+        <form class="form-wrapper cf">
+            <input type="text" placeholder="Search here..." required>
+            <button id="search" onclick="" type="submit">Search</button>
+        </form>
+    </div>
+    <br clear="all" />
+    	
+    <div id="results">
+        <div class="search-background">
+			<label><img src="images/loader.gif" alt="" /></label>
+		</div>
+        <div id="sub_cont">	
+        
+		</div>
+    </div>
 </div>
         
 </body>
