@@ -12,6 +12,8 @@ $fname = $user_info['fname'];
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Schedule Pro - Check Class</title>
 <link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
+<script src="js/custom.js"></script>
 </head>
 <body>
 <div id="checkclass-container">

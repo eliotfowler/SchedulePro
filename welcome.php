@@ -62,7 +62,7 @@ $fname = $user_info['fname'];
 					<td>
 						<table border="0" cellpadding="0" cellspacing="0">
 							<tr>
-								<td><a href="check_single_status.php" id="class_status" onMouseOver="document.classStatus.src='images/classStatusB.png';" onMouseOut="document.classStatus.src='images/classStatus.png';">
+								<td><a href="check_class.php" id="class_status" onMouseOver="document.classStatus.src='images/classStatusB.png';" onMouseOut="document.classStatus.src='images/classStatus.png';">
 <img src="images/classStatus.png" name="classStatus" border="0" ></a></td>						
 							</tr>
 							<tr>
