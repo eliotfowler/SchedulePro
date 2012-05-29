@@ -24,11 +24,11 @@ function checkValues($value)
 }
 
 $safe = checkValues($_REQUEST['val']);
-
+echo $safe;
 $input = explode(" ", $safe);
 
 
 var_dump($input[0]);
-echo $input[0];
-echo "hi";
+//echo $input[0];
+//echo "hi";
 return $input[0];
