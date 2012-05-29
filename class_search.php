@@ -29,4 +29,3 @@ function checkValues($value)
 
 
 echo $input[0];
-return $input[0];
