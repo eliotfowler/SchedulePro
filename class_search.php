@@ -23,7 +23,7 @@ function checkValues($value)
 	
 }
 
-$safe = checkValues($_REQUEST['val']);
+$safe = checkValues($_GET['val']);
 echo $safe;
 $input = explode(" ", $safe);
 
