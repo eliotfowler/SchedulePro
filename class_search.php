@@ -25,9 +25,8 @@ function checkValues($value)
 
 $safe = checkValues($_REQUEST['val']);
 
-if($safe) {
-	$input = explode(" ", $_REQUEST['val']);
-}
+$input = explode(" ", $safe);
+
 
 var_dump($input[0]);
 echo $input[0];
