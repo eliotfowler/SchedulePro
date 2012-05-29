@@ -349,6 +349,14 @@ Button Menu li hover
 	height: 878px;	
 }
 
+#check-main {
+	background-image: url("../images/miami-template.png");
+	background-size: auto;
+	margin: auto auto auto auto;
+	width: 996px;
+	height: 878px;	
+}
+
 /* Form styles */
 
 input,select{
