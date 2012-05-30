@@ -27,7 +27,7 @@ function checkValues($value)
 
 $check = mysql_query("SELECT * 
 					  FROM classes, meeting_times 
-					  WHERE dept_code = '$input[0]' AND course_number = '$input[1]' 
+					  WHERE dept_code = '"$input[0]"' AND course_number = '"$input[1]"' 
 					  		AND classes.crn = meeting_times.crn") or die(mysql_error());
 							
 $rows = mysql_fetch_assoc( $check );
