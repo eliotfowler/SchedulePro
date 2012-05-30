@@ -45,7 +45,15 @@ $fname = $user_info['fname'];
     	
     <div id="results">
         <div id="sub_cont">	
-        	Positioning
+        	<table id="class_list">
+            	<tr>
+                	<th>CRN</th>
+                    <th>Days of Week</th>
+                    <th>Start time</th>
+                    <th>End time</th>
+                    <th>Professor</th>
+                    <th>Spots left</th>
+               </tr>
 		</div>
     </div>
 </div>
