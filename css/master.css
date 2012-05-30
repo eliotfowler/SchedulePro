@@ -466,6 +466,8 @@ Check Class Search Bar
 
 #results {
 		position:relative;
+		top:250px;
+		left:100px;
 	}
 	
 	#results .class_list {
