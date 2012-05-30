@@ -14,7 +14,14 @@ function class_search()
 	$.post("class_search.php", 
 			{ val: $("#search_text").val() }, 
 			function(ret) {
-				alert(ret);
+				create_table(ret);
 			}, "json");
 	
+}
+
+function create_table(jsonin) {
+	for(i = 0; i < 5; i++)
+	{
+		alert(jsonin[i].crn);
+	}	
 }

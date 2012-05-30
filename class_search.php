@@ -37,9 +37,8 @@ if(!$check) {
 }
 
 while($row = mysql_fetch_assoc( $check )) {
-	$result[] = json_encode($row);	
+	$result[] = $row;	
 }
 
 
-//echo json_encode($input[0]);
-var_dump( json_encode($result));
+echo json_encode($result);
