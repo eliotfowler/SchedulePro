@@ -1,7 +1,7 @@
 <?php include "config.php";
 
 //$postVal = $_POST['val'];
-$postVal = "com 135";
+$postVal = "ACC 221";
 $safe = checkValues($postVal);
 $input = explode(" ", $safe);
 
