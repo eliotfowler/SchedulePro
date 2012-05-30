@@ -1,6 +1,7 @@
 <?php include "config.php";
 
-$postVal = $_POST['val'];
+//$postVal = $_POST['val'];
+$postVal = "com 135";
 $safe = checkValues($postVal);
 $input = explode(" ", $safe);
 
@@ -25,12 +26,18 @@ function checkValues($value)
 	
 }
 
-/*$check = mysql_query("SELECT * 
+$check = mysql_query("SELECT * 
 					  FROM classes, meeting_times
 					  WHERE dept_code = '" . $input[0] . "' AND course_number = '" . $input[1] . "' 
-					  		AND classes.crn = meeting_times.crn") or die(mysql_error());
+					  		AND classes.crn = meeting_times.crn");
 							
+if(!$check) {
+	echo "bad";	
+}
+
 $rows = mysql_fetch_assoc( $check );
-*/
-echo json_encode($input[0]);
+
+var_dump($rows);
+
+//echo json_encode($input[0]);
 //echo json_encode($rows);
