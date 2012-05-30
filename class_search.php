@@ -28,8 +28,9 @@ function checkValues($value)
 
 $check = mysql_query("SELECT * 
 					  FROM classes, meeting_times
-					  WHERE classes.dept_code = '" . strtoupper($input[0]) . "' AND classes.course_number = '" . $input[1] . "' 
-					  		AND classes.crn = meeting_times.crn");
+					  WHERE classes.crn = meeting_times.crn");
+					  //classes.dept_code = '" . strtoupper($input[0]) . "' AND classes.course_number = '" . $input[1] . "' 
+					  //		AND 
 							
 if(!$check) {
 	echo "bad";	
