@@ -26,12 +26,33 @@ function create_table(jsonin) {
 	{
 		var row = tbl.insertRow(i);
 		
-		for(j=0; j<6; j++)
-		{
-			var cell = row.insertCell(j);
-			var cellText = document.createTextNode("cell is row "+j+", column "+i);
-			cell.appendChild(cellText);
-		}
+		var cell0 = row.insertCell(0);
+		var cellText0 = jsonin[i].crn;
+		cell0.appendChild(cellText0);
+		
+		var cell1 = row.insertCell(1);
+		var cellText1 = jsonin[i].crn;
+		cell1.appendChild(cellText1);
+		
+		var cell2 = row.insertCell(2);
+		var cellText2 = jsonin[i].crn;
+		cell2.appendChild(cellText2);
+		
+		var cell0 = row.insertCell(0);
+		var cellText0 = jsonin[i].crn;
+		cell0.appendChild(cellText0);
+		
+		var cell0 = row.insertCell(0);
+		var cellText0 = jsonin[i].crn;
+		cell0.appendChild(cellText0);
+		
+		var cell0 = row.insertCell(0);
+		var cellText0 = jsonin[i].crn;
+		cell0.appendChild(cellText0);
+		
+		var cell0 = row.insertCell(0);
+		var cellText0 = jsonin[i].crn;
+		cell0.appendChild(cellText0);
 		
 	}	
 	

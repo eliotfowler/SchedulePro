@@ -26,19 +26,29 @@ function checkValues($value)
 	
 }
 
-$check = mysql_query("SELECT * 
+$query1 = mysql_query("SELECT crn 
+					  FROM classes
+					  WHERE classes.dept_code = '" . strtoupper($input[0]) . "' AND classes.course_number = '" . $input[1] . "' limit 25");
+
+while($row = mysql_fetch_assoc( $query1 )) {
+	$crns[] = $row;	
+}
+
+var_dump($crns);
+
+$query2 = mysql_query("SELECT * 
 					  FROM classes, meeting_times
 					  WHERE classes.dept_code = '" . strtoupper($input[0]) . "' AND classes.course_number = '" . $input[1] . "' 
 					  		AND classes.crn = meeting_times.crn limit 25");
 					  
 							
-if(!$check) {
+if(!$query1) {
 	echo "bad";	
 }
 
-while($row = mysql_fetch_assoc( $check )) {
+while($row = mysql_fetch_assoc( $query2 )) {
 	$result[] = $row;	
 }
 
 
-echo json_encode($result);
+//echo json_encode($result);
