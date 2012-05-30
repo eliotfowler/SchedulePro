@@ -32,5 +32,5 @@ $check = mysql_query("SELECT *
 							
 $rows = mysql_fetch_assoc( $check );
 
-echo json_encode($input[0]);
+return json_encode($input[0]);
 //echo json_encode($rows);
