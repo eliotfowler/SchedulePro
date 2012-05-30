@@ -453,6 +453,8 @@ td{
 	visibility:hidden;
 }
 
+
+
 /*---------------------------
 Check Class Search Bar
 ---------------------------*/
@@ -464,8 +466,10 @@ Check Class Search Bar
 
 #results {
 		position:relative;
-		top:500px;
-		left:100px;
+	}
+	
+	#results .class_list {
+			
 	}
 
 .cf:before, .cf:after{
