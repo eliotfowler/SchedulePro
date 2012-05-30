@@ -1,7 +1,7 @@
 <?php include "includes/config.php";
 
 //$postVal = $_POST['val'];
-$postVal = "ACC 221";
+$postVal = "com 135";
 $safe = checkValues($postVal);
 $input = explode(" ", $safe);
 
@@ -28,9 +28,9 @@ function checkValues($value)
 
 $check = mysql_query("SELECT * 
 					  FROM classes, meeting_times
-					  WHERE classes.crn = meeting_times.crn limit 25");
-					  //classes.dept_code = '" . strtoupper($input[0]) . "' AND classes.course_number = '" . $input[1] . "' 
-					  //		AND 
+					  WHERE classes.dept_code = '" . strtoupper($input[0]) . "' AND classes.course_number = '" . $input[1] . "' 
+					  		AND classes.crn = meeting_times.crn limit 25");
+					  
 							
 if(!$check) {
 	echo "bad";	
