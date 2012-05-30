@@ -42,4 +42,4 @@ while($row = mysql_fetch_assoc( $check )) {
 
 
 //echo json_encode($input[0]);
-echo json_encode($result);
+var_dump( json_encode($result));
