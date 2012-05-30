@@ -37,7 +37,7 @@ if(!$check) {
 }
 
 while($row = mysql_fetch_assoc( $check )) {
-	$result[] = $row;	
+	$result[][] = $row;	
 }
 
 
