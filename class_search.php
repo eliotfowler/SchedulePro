@@ -1,7 +1,7 @@
 <?php include "includes/config.php";
 
-$postVal = $_POST['val'];
-//$postVal = "com 135";
+//$postVal = $_POST['val'];
+$postVal = "com 135";
 $safe = checkValues($postVal);
 $input = explode(" ", $safe);
 
