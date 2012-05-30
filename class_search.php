@@ -30,8 +30,8 @@ $query1 = mysql_query("SELECT crn
 					  FROM classes
 					  WHERE classes.dept_code = '" . strtoupper($input[0]) . "' AND classes.course_number = '" . $input[1] . "' limit 25");
 
-while($row = mysql_fetch_row( $query1 )) {
-	$crns[] = $row;	
+while($row = mysql_fetch_assoc( $query1 )) {
+	$crns[] = $row[0];	
 }
 
 var_dump($crns);
