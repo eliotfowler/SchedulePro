@@ -462,6 +462,7 @@ Check Class Search Bar
 #check-main{
 	position:relative;
 	top:300px;
+	width:auto;
 }
 
 #results {
