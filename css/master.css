@@ -472,7 +472,7 @@ Check Class Search Bar
 	
 	#class_list {
 		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-		width:100%;
+		
 		border-collapse:collapse;
 	}
 		#class_list td, #class_list th {
