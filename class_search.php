@@ -1,4 +1,4 @@
-<?php include "config.php";
+<?php include "includes/config.php";
 
 //$postVal = $_POST['val'];
 $postVal = "ACC 221";
