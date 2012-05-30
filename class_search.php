@@ -28,7 +28,7 @@ function checkValues($value)
 
 $check = mysql_query("SELECT * 
 					  FROM classes, meeting_times
-					  WHERE classes.crn = meeting_times.crn");
+					  WHERE classes.crn = meeting_times.crn limit 25");
 					  //classes.dept_code = '" . strtoupper($input[0]) . "' AND classes.course_number = '" . $input[1] . "' 
 					  //		AND 
 							
