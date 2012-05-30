@@ -467,12 +467,12 @@ Check Class Search Bar
 #results {
 	position:relative;
 	top:300px;
-	left:255px;
+	left:240px;
 }
 	
 	#class_list {
 		font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-		width:75%;
+		width:78%;
 		border-collapse:collapse;
 	}
 		#class_list td, #class_list th {
