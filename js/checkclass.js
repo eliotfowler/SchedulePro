@@ -10,7 +10,6 @@ $(document).ready(function(){
 
 function class_search()
 {	
-	alert($("#search_text").val());
 	$.post("class_search.php", 
 			{ val: $("#search_text").val() }, 
 			function(ret) {
@@ -23,7 +22,7 @@ function create_table(jsonin) {
 	var tbl = document.getElementById("class_list");
 	var tblBody = document.createElement("tbody");
 	
-	for(i = 0; i < 5; i++)
+	for(i = 1; i < 5; i++)
 	{
 		var row = tbl.insertRow(i);
 		
