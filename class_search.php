@@ -36,9 +36,10 @@ if(!$check) {
 	echo "bad";	
 }
 
-$rows = mysql_fetch_assoc( $check );
+while($row = mysql_fetch_assoc( $check )) {
+	$result[] = $row;	
+}
 
-var_dump($rows);
 
 //echo json_encode($input[0]);
-//echo json_encode($rows);
+echo json_encode($result);
