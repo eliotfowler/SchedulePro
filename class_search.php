@@ -25,7 +25,12 @@ function checkValues($value)
 	
 }
 
-$check = mysql_query("SELECT * FROM classes, meeting_times WHERE dept_code = '$input[0]' AND course_number = '$input[1]'") or die(mysql_error());
+$check = mysql_query("SELECT * 
+					  FROM classes, meeting_times 
+					  WHERE dept_code = '$input[0]' AND course_number = '$input[1]' 
+					  		AND classes.crn = meeting_times.crn") or die(mysql_error());
+							
+$rows = mysql_fetch_assoc( $check );
 
 
-echo json_encode($input[0] . $input[1]);
+echo json_encode($rows);
